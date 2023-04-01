@@ -6,14 +6,19 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	display: none;
-	background-color: rgba(0, 0, 0, 0.3);
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s ease-in-out;
 }
 
 .editor_window_active {
 	position: fixed;
 	display: flex;
-
+	opacity: 1;
+	pointer-events: all;
+	transform: scale(1);
 }
 
 .editor_window_content {
@@ -38,4 +43,11 @@
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 24px;
+	transition: all 0.5s ease-in-out;
+
+	transform: scale(0);
+}
+
+.editor_window_content_active {
+	transform: scale(1);
 }

@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { root } from '.';
 import { useEffect } from "react";
-import CreateUsersPage from "./components/CreateUsersPage";
-import UserEditorWindow from "./components/UI/modals/UserEditorWindow.jsx";
+import UsersPage from "./components/PagesParts/Main/Main_Pages/Users_Page/UsersPage";
 import { TEST_URL } from './MAIN.js';
 import { GET_USERS_URL } from './MAIN.js';
 import { DELETE_USERS_URL } from './MAIN.js';
@@ -36,7 +34,7 @@ function Users() {
 
     const GetUsers = () => {
 
-        fetch(GET_USERS_URL)
+        fetch(TEST_URL)
             .then(response => response.json())
             .then(
                 (result) => {
@@ -68,7 +66,7 @@ function Users() {
     };
 
     return (
-        <CreateUsersPage
+        <UsersPage
             editUser={editUser}
             deleteUser={deleteUser}
             userItems={userItems}

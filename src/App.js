@@ -1,5 +1,7 @@
 import React from 'react';
 import { root } from '.';
+import Header from './components/PagesParts/Header/Header';
+import Footer from './components/PagesParts/Footer/Footer'
 import Users from './users';
 
 
@@ -12,21 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="header flex">
-        <div className="conteiner header_conteiner flex">
-          <div className="header_mem_text">
-            <h1>Logo</h1>
-          </div>
-          <div className="authentication flex">
-            <a href="login.html" className="home_page_link header_link flex">
-              <span>Вход</span>
-            </a>
-            <a href="registration.html" className="home_page_link header_link flex">
-              <span>Регистрация</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header/>
       <main className="main">
         <div className="container home_page_container">
           <ul className="home_page_buttons_list flex">
@@ -47,9 +35,7 @@ function App() {
           </ul>
         </div>
       </main>
-      <footer className="footer">
-
-      </footer>
+      <Footer/>
     </div>
   );
 }

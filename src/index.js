@@ -7,8 +7,6 @@ import './css/style.css';
 
 export const root = ReactDOM.createRoot(document.getElementById('root'));
 
-
 root.render(
   <App />
 );
-
