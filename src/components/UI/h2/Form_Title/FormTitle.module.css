@@ -1,0 +1,63 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.loader {
+    margin: 0 0 30px;
+	text-align: center;
+	font-size: 35px;
+	padding: 20px 0;
+}
+
+.loader span {
+	color: #faebd7;
+	text-shadow: 0 0 0 #faebd7;
+	animation: loading 2s ease-in-out 1 alternate;
+	animation-fill-mode: forwards;
+	font-size: 30px;
+}
+
+@keyframes loading {
+	to {
+		text-shadow: 0 0 40px var(--cyan-color);
+		color: var(--cyan-color);
+	}
+}
+
+.loader span:nth-child(2) {
+	animation-delay: 0.1s;
+}
+
+.loader span:nth-child(3) {
+	animation-delay: 0.2s;
+}
+
+.loader span:nth-child(4) {
+	animation-delay: 0.3s;
+}
+
+.loader span:nth-child(5) {
+	animation-delay: 0.4s;
+}
+
+.loader span:nth-child(6) {
+	animation-delay: 0.5s;
+}
+
+.loader span:nth-child(7) {
+	animation-delay: 0.6s;
+}
+
+.loader span:nth-child(8) {
+	animation-delay: 0.7s;
+}
+
+.loader span:nth-child(9) {
+	animation-delay: 0.8s;
+}
+
+.loader span:nth-child(10) {
+	animation-delay: 0.9s;
+}
+
+.loader span:nth-child(11) {
+	animation-delay: 1s;
+}

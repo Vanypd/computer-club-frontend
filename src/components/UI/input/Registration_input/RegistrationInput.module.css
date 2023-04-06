@@ -1,0 +1,72 @@
+@import url('../../../../css/GLOBAL_STYLES.css');
+
+.input_box {
+    position: relative;
+}
+
+.input_box input:focus~label,
+.input_box input:valid~label {
+    top: -35px;
+    left: 0;
+    color: var(--cyan-color);
+    font-size: 12px;
+}
+
+.form_place {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 5px 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    transition: outline 0.5s ease-in-out, background-color 0.2s ease, border-radius 0.5s ease-in-out, border-color 0.5s ease-in-out;
+    color: #fff;
+    outline-color: rgba(0, 0, 0, 0);
+}
+
+.form_place:focus {
+    outline: 1px solid var(--cyan-color);
+    outline-offset: 3px;
+    border-radius: 3px
+}
+
+.form_place_valid {
+    border-color: #2cfc6b;
+}
+
+.form_place_invalid {
+    border-color: #d43131;
+}
+
+.div_label {
+    position: absolute;
+    top: -10px;
+    left: 7px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.error {
+    position: absolute;
+	left: 0;
+	top: 35px;
+	width: 100%;
+	height: 30px;
+	padding-left: 20px;
+	background-color: rgba(0, 0, 0, .4);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-weight: 100;
+	font-size: 12px;
+	line-height: 30px;
+	color: var(--error-text-message);
+	transition: all 0.2s ease-in-out;
+	opacity: 0;
+}
+
+.error_active {
+	opacity: 1;
+}

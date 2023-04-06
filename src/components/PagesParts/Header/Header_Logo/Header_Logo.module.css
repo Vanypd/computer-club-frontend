@@ -1,0 +1,27 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.header_logo {
+    padding-left: 30px;
+	padding-top: 8px;
+	fill: var(--cyan-color);
+	white-space: pre;
+	/* animation: headerEffect 5s infinite linear; */
+}
+
+@keyframes headerEffect {
+	0% {
+		fill: #ce0071;
+	}
+
+	33% {
+		fill: var(--cyan-color);
+	}
+
+	66% {
+		fill: var(--cyan-color);
+	}
+
+	100% {
+		fill: #ce0071;
+	}
+}

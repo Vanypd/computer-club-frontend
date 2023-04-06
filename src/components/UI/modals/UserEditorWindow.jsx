@@ -39,7 +39,7 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
         }>
             <div className={
                 active ? ([classes.editor_window_content, classes.editor_window_content_active].join(' ')) : (classes.editor_window_content)
-                }>
+            }>
                 <a className="editor_window_close" tabIndex="1" onClick={() => setActive(false)}>
                     <svg width="25px" height="25px" viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg">
@@ -97,9 +97,6 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
             </div>
         </div>
     )
-
-
-
 }
 
 export default UserEditorWindow;

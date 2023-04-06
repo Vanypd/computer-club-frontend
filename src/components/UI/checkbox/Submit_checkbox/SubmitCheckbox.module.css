@@ -1,0 +1,71 @@
+@import url('../../../../css/GLOBAL_STYLES.css');
+
+.area {
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkbox_label {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 30px;
+	transition: all 0.15s ease-in-out;
+}
+
+.checkbox_label:hover,
+.checkbox_label:hover span {
+	color: var(--cyan-color);
+	transform: scale(101%);
+}
+
+.checkbox_label:active,
+.checkbox_label:active span {
+	filter: brightness(70%);
+	transform: scale(100%);
+}
+
+input[type="checkbox"] {
+	-webkit-appearance: none;
+	appearance: none;
+
+	position: relative;
+	margin-right: 5px;
+	top: 5px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border: 1px solid rgb(255, 255, 255);
+	text-align: center;
+	cursor: pointer;
+
+}
+
+input[type="checkbox"]:hover {
+	border-color: var(--cyan-color);
+}
+
+.checkbox {
+	position: relative;
+}
+
+.checkbox:before {
+	content: '\2713';	
+	position: absolute;
+	top: -3px;
+	left: 5px;
+	opacity: 1;
+	cursor: pointer;
+	/* transition: all 0.1s ease-in-out; */
+}
+
+.checkbox_active:before {
+	content: '';	
+	position: absolute;
+	top: -3px;
+	left: 5px;
+	opacity: 1;
+	cursor: pointer;	
+}

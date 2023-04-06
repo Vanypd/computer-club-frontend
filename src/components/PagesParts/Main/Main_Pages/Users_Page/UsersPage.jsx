@@ -1,24 +1,16 @@
 import React from 'react'
-import App from '../../../../../App';
 import CreateUsersItems from '../../../../CreateUsersItems';
 import UserEditorWindow from '../../../../UI/modals/UserEditorWindow';
-import { root } from '../../../../../index';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
+import BackButton from '../../../../UI/button/back_button/BackButton';
 
 const CreateUsersPage = (props) => {
-    const MainPage = () => {
-        root.render(
-            <App />
-        );
-    }
 
     return (
         <div className="App">
-            <Header />
-            <div className="back_btn">
-                <a onClick={MainPage} className="back_btn_link">Назад</a>
-            </div>
+            <Header /> 
+            <BackButton/>
             <main className="main">
                 <UserEditorWindow
                     active={props.editorWindowActive}
