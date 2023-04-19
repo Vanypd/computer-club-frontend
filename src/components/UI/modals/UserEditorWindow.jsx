@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './UserEditorWindow.module.css'
 import { PUT_USERS_URL } from '../../../MAIN'
+import MainStyleBtn from '../button/main_style_button/MainStyleBtn'
 
 const UserEditorWindow = ({ currentItemParameters, active, setActive, currentItem, GetUsers }) => {
 
@@ -50,7 +51,13 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
                 <div className="editor_window_place_div">
                     <div>
                         <span className="editor_window_label">id</span>
-                        <input type="text" id="id" value={currentItemParameters.id} className="form_place editor_window_place--non-active" readOnly></input>
+                        <input
+                            type="text"
+                            id="id"
+                            value={currentItemParameters.id}
+                            className={classes.form_place_non_active}
+                            readOnly
+                        ></input>
                     </div>
                     <div>
                         <span className="editor_window_label">name</span>
@@ -59,7 +66,7 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
                             id="name"
                             value={currentItemParameters.name}
                             onChange={e => currentItemParameters.setName(e.target.value)}
-                            className="form_place editor_window_place"
+                            className={classes.form_place}
                         ></input>
                     </div>
                     <div>
@@ -69,7 +76,7 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
                             id="email"
                             value={currentItemParameters.email}
                             onChange={e => currentItemParameters.setEmail(e.target.value)}
-                            className="form_place editor_window_place"
+                            className={classes.form_place}
                         ></input>
                     </div>
                     <div>
@@ -79,7 +86,7 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
                             id="phone"
                             value={currentItemParameters.phone}
                             onChange={e => currentItemParameters.setPhone(e.target.value)}
-                            className="form_place editor_window_place"
+                            className={classes.form_place}
                         ></input>
                     </div>
                     <div>
@@ -89,11 +96,11 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
                             id="password"
                             value={currentItemParameters.password}
                             onChange={e => currentItemParameters.setPassword(e.target.value)}
-                            className="form_place editor_window_place"
+                            className={classes.form_place}
                         ></input>
                     </div>
                 </div>
-                <button onClick={confirmUpdate} className="editor_window_submit">Принять</button>
+                <MainStyleBtn onClick={confirmUpdate}>Принять</MainStyleBtn>
             </div>
         </div>
     )

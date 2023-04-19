@@ -1,0 +1,41 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.booked {
+    pointer-events: none;
+    background-color: rgb(160, 160, 160);
+}
+
+.box_cell {
+    display: flex;
+    padding: 10px 10px;
+    flex-grow: 1;
+    width: 16%;
+    height: 25%;
+    transition: all 0.2s ease-in-out;
+}
+
+.box_cell_active {
+    background-color: var(--booking-theme-color);
+    box-shadow: 0px 0px 15px var(--booking-theme-color);
+    pointer-events: none;
+}
+
+.box_cell_button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.1s ease-in-out;
+}
+
+.box_cell_button:hover {
+    background-color: var(--booking-theme-color);
+    color: black;
+    box-shadow: 0px 0px 15px var(--booking-theme-color);
+}
+
+.box_cell_button:active {
+    transform: scale(95%);
+    filter: brightness(70%);
+}

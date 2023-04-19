@@ -1,0 +1,100 @@
+@import url(../../../../../../css/GLOBAL_STYLES.css);
+
+.section {
+    position: relative;
+    background-image: url(/src/img/Hero_bck.png);
+    /* background-image: url(/src/img/Hero_bck_with_svg.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1366px;
+    min-width: 290px;
+}
+
+.Hero_main_div {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    /* min-height: 700px; */
+    height: 80vh;
+}
+
+.section_svg {
+    --height: 30vh;
+    max-height: var(--height);
+    
+    width: 70vw;
+
+    position: absolute;
+    top: calc(50% - (var(--height) / 2));
+    left: -0.3vw;
+
+    filter: url(#filter0_b_30_2);
+
+    fill: url(#paint0_linear_30_2);
+    fill-opacity: 0.7;
+}
+
+.section_title_div {
+    --height: 30vh;
+
+    max-height: var(--height);
+    height: 29vh;
+    width: 50vw;
+    padding-top: 5vh;
+
+    position: absolute;
+    top: calc(50% - (var(--height) / 2));
+    left: 15vw;
+
+    /* border: 1px solid black; */
+}
+
+
+
+.section_title_h2 {
+    padding: 0;
+    margin-left: 5vw;
+    margin-bottom: 1vh;
+
+    background: linear-gradient(94.35deg, #00FFC2 -18.59%, #5E9EFF -10.74%, #FF45EC 97.34%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    font-size: 2vw;
+    line-height: normal;
+    text-transform: uppercase;
+
+    filter: drop-shadow(0.3vh 0.3vh 0px #000000);
+}
+
+.section_title_h3 {
+    margin-left: 5vw;
+
+    background: linear-gradient(94.35deg, #00FFC2 -18.59%, #5E9EFF -10.74%, #FF45EC 97.34%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    font-size: 1.5vw;
+    line-height: normal;
+    font-variant: all-small-caps;
+
+    filter: drop-shadow(0.3vh 0.3vh 0px #000000);
+}

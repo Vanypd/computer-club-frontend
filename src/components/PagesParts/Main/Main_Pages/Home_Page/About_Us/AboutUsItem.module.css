@@ -1,0 +1,62 @@
+@import url(../../../../../../css/GLOBAL_STYLES.css);
+
+.aboutUs_item {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: inherit;
+
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.aboutUs_item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.aboutUs_item:hover .aboutUs_item_img {
+    background-size: 110%;
+}
+
+.aboutUs_item_img {
+    flex-basis: 70%;
+    flex-shrink: 0;
+    /* margin-bottom: 20px; */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: background-size 0.2s ease-in-out;
+
+    background-repeat: no-repeat;
+    background-size: 101%;
+    background-position: top;
+}
+
+.aboutUs_item_descr {
+    display: flex;
+    flex-basis: 30%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.aboutUs_item_descr_text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 25px;
+    line-height: normal;
+    text-align: center;
+}
+
+.img1 {
+    background-image: url(/src/img/aboutUs_item_1.jpg);
+}
+
+.img2 {
+    background-image: url(/src/img/aboutUs_item_2.jpg);
+}
+
+.img3 {
+    background-image: url(/src/img/aboutUs_item_3.jpg);
+}

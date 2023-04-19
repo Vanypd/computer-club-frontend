@@ -34,7 +34,7 @@ function Users() {
 
     const GetUsers = () => {
 
-        fetch(TEST_URL)
+        fetch(GET_USERS_URL)
             .then(response => response.json())
             .then(
                 (result) => {

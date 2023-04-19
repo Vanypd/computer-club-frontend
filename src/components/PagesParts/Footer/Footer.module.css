@@ -1,0 +1,8 @@
+@import url(../../../../src/css/GLOBAL_STYLES.css);
+
+.footer {
+    width: 100%;
+    height: 400px;
+
+    background: #1E1E1E;
+}

@@ -1,0 +1,73 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: brightness(50%);
+}
+
+.default_button_styles {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    min-width: 200px;
+    background-color: transparent;
+    border: 2px solid var(--cyan-color);
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.default_button_styles span {
+    margin: 0 auto;
+    font: inherit;
+    color: inherit;
+    pointer-events: none;
+    align-self: center;
+}
+
+.default_button_styles:focus {
+    outline: 1px solid var(--cyan-color);
+    outline-offset: 2px;
+}
+
+.default_button_styles:hover {
+    background-color: var(--cyan-color);
+    color: #fff;
+    box-shadow: 0 0 5px var(--cyan-color),
+        0 0 50px var(--cyan-color);
+
+}
+
+.default_button_styles:active {
+    outline: none;
+    filter: brightness(70%);
+    transform: scale(90%);
+}
+
+.monochrome_button_styles {
+    color: var(--cyan-color);
+}
+
+.delete_button_styles:hover {
+    background-color: var(--delete-red-color);
+    border-color: var(--delete-red-color);
+    color: #fff;
+    box-shadow: 0 0 5px var(--delete-red-color),
+        0 0 50px var(--delete-red-color);
+}
+
+.monochrome_delete_button_styles {
+    color: var(--cyan-color);
+}
+
+.monochrome_delete_button_styles:hover {
+    background-color: var(--delete-red-color);
+    border-color: var(--delete-red-color);
+    color: #fff;
+    box-shadow: 0 0 5px var(--delete-red-color),
+        0 0 50px var(--delete-red-color);
+}

@@ -1,0 +1,39 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.selector {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    min-width: 500px;
+    min-height: 40px;
+    /* color: var(--first-main-color); */
+
+    border: 2px solid var(--cyan-color);
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.option {
+    color: black;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 500px;
+    height: 200px;
+    border: 1px solid var(--booking-theme-color);
+}
+
+.box_disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: brightness(50%);
+}
+

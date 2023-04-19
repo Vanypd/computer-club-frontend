@@ -1,6 +1,5 @@
 import React from "react";
-import { UsersButton } from "./UI/button/UsersButton";
-import { UsersDeleteButton } from "./UI/button/UsersButton";
+import MainStyleBtn from "./UI/button/main_style_button/MainStyleBtn";
 
 const CreateUsersItems = (props) => {
 
@@ -14,6 +13,15 @@ const CreateUsersItems = (props) => {
         props.editUser(props.item);
     }
 
+    const edit_btn_styles = {
+        fontSize: '12px',
+        marginBottom: '10px',
+    }
+
+    const delete_btn_styles = {
+        fontSize: '12px',
+    }
+
     return <div className="user_item flex" userid={props.item.id}>
         <div className="user_item_info flex">
             <div className="item_info_userId"><mark>id: </mark>{props.item.id}</div>
@@ -23,8 +31,8 @@ const CreateUsersItems = (props) => {
             <div className="item_info_userId"><mark>password: </mark>{props.item.password}</div>
         </div>
         <div className="user_item_buttons flex">
-            <UsersButton onClick={editUserEvent}>Редактировать</UsersButton>
-            <UsersDeleteButton onClick={() => props.deleteUser(props.item)}>Удалить</UsersDeleteButton>
+            <MainStyleBtn classType={'monochrome'} onClick={editUserEvent} styles={edit_btn_styles}>Редактировать</MainStyleBtn>
+            <MainStyleBtn classType={'monochrome-delete'} onClick={() => props.deleteUser(props.item)} styles={delete_btn_styles}>Удалить</MainStyleBtn>
         </div>
     </div>;
 }

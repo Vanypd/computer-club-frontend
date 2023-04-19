@@ -1,0 +1,19 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.calendar {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    min-width: 500px;
+    min-height: 40px;
+
+    border: 2px solid var(--booking-theme-color);
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.calendar_div {
+    margin: auto;
+}

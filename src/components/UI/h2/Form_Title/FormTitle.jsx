@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import classes from './FormTitle.module.css'
 
-const FormTitle = ({ arrayWord, ...props }) => {
+const FormTitle = ({ styles, arrayWord, ...props }) => {
     return (
-        <h2 className={classes.loader}>
+        <h2 style={styles} className={classes.loader}>
             <div>
                 {arrayWord.map((letter, index) => (
                     <span key={index}>{letter}</span>

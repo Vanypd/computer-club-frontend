@@ -59,7 +59,7 @@
 	background-color: rgba(0, 0, 0, .4);
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	font-weight: 100;
+	font-weight: 400;
 	font-size: 12px;
 	line-height: 30px;
 	color: var(--error-text-message);

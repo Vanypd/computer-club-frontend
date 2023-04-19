@@ -1,30 +1,37 @@
-import React from 'react'
-import Users from '../../../../../users';
-import { root } from '../../../../../';
+import React, { useEffect } from 'react'
+import AdminOptions from './Admin_options/AdminOptions';
+import AboutUs from './About_Us/AboutUs';
+import Booking from './Booking/Booking';
+import { useState } from 'react';
+import Articles from './Articles/Articles';
+import classes from './HomePage.module.css'
+import Hero from './Hero/Hero';
+import Games from './Games/Games';
 
 const HomePage = () => {
-  const UsersPage = () => {
-    root.render(
-      <Users />
-    )
-  }
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+  };
+  
+  useEffect(() => {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+  
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
 
   return (
     <main className="main">
-      <div className="container home_page_container">
-        <ul className="home_page_buttons_list flex">
-          <li className="home_page_buttons_item flex">
-            <a onClick={UsersPage} className="home_page_link flex">
-              <span>Просмотр пользователей</span>
-            </a>
-          </li>
-          <li className="home_page_buttons_item flex">
-            <a href="aboutUs.html" className="home_page_link flex">
-              <span>О нас</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      {/* <AdminOptions /> */}
+      <div className={classes.first_tape}></div>
+      <Hero/>
+      <AboutUs />
+      <Games/>
+      <Booking scrollPos={scrollPosition}/>
     </main>
   )
 }

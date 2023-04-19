@@ -16,12 +16,6 @@ const RegInput = ({ value, onBlur, onChange, handler, errorMsg, state, setState,
         }
     }
 
-    // НЕ РАБОТАЕТ
-    // const onChangeState = async (e) => {
-    //     await onChange(e);
-        
-    // }
-
 
     return (
         <div className={classes.input_box}>
