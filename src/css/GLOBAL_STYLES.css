@@ -1,13 +1,13 @@
 * {
-    margin: 0;
+	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 
-    font-family: 'Roboto', 'font', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+	font-family: 'Roboto', 'font', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
 	line-height: 24px;
-    color: #fff;
+	color: #fff;
 
 }
 
@@ -16,19 +16,17 @@
 
 	--first-main-color: #d50455;
 	--second-main-color: #3548be;
-	--first-secondary-color: #71bbff;
-	--main-color-2: #243b55;
-	--main-color: rgba(0, 0, 0, 0.1);
-	--cyan-color-2: #03e9f4;
-	--cyan-color: #71bbff;
 
-	--booking-theme-color: #7754c9;
-
-	
+	--page-theme-color: #1e1e1e;
+	animation: lgbt 3s ease-in-out;
+	--first-details-color: #71bbff;
+	--second-details-color: #7754c9;
 	--delete-red-color: #ff2e2e;
 	--error-text-message: #d43131;
 
 	--translucent-border: 1px solid rgba(0, 0, 0, 0.3);
+
+
 
 }
 
@@ -39,4 +37,3 @@
 #root {
 	all: inherit;
 }
-

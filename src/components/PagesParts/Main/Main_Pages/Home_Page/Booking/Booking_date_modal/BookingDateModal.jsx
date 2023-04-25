@@ -4,9 +4,9 @@ import { CookieManager, GET_BOOKING_ORDER_URL, POST_BOOKING_ORDER_URL } from "..
 import MainStyleBtn from "../../../../../UI/button/main_style_button/MainStyleBtn";
 import BookingCalendar from "../../../../../UI/calendar/booking_calendar/BookingCalendar";
 import BookingSelector from "../../../../../UI/selector/Booking_selector/BookingSelector";
-import classes from './Booking.module.css'
+import classes from './BookingDateModal.module.css'
 
-const Booking = ({ scrollPos }) => {
+const BookingDateModal = ({ scrollPos }) => {
 
     const [selectedCell, setSelectedCell] = useState(''); // EXAMPLE: '13:00'
     const [selectedDate, setSelectedDate] = useState(''); // EXAMPLE: '2023-04-12'
@@ -195,4 +195,4 @@ const Booking = ({ scrollPos }) => {
     )
 }
 
-export default Booking;
+export default BookingDateModal;

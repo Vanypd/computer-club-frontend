@@ -2,16 +2,15 @@ import React from 'react'
 import CreateUsersItems from '../../../../CreateUsersItems';
 import UserEditorWindow from '../../../../UI/modals/UserEditorWindow';
 import Header from '../../../Header/Header';
-import Footer from '../../../Footer/Footer';
 import BackButton from '../../../../UI/button/back_button/BackButton';
+import classes from './UsersPage.module.css'
 
 const CreateUsersPage = (props) => {
 
     return (
         <div className="App">
-            <Header /> 
             <BackButton/>
-            <main className="main">
+            <main className={classes.main}>
                 <UserEditorWindow
                     active={props.editorWindowActive}
                     setActive={props.setEditorWindowActive}
@@ -19,7 +18,7 @@ const CreateUsersPage = (props) => {
                     GetUsers={props.GetUsers}
                     currentItemParameters={props.currentItemParameters}
                 />
-                <div className="container home_page_container">
+                <div className={classes.container}>
                     {props.userItems.map(item =>
                         <CreateUsersItems
                             editUser={props.editUser}
@@ -31,7 +30,6 @@ const CreateUsersPage = (props) => {
                         />)}
                 </div>
             </main>
-            <Footer/>
         </div>
     )
 }

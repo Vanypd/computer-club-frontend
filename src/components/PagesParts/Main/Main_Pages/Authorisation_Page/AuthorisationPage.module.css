@@ -37,3 +37,18 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.response_error_messege {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	max-width: 100%;
+	padding-top: 10px;
+	word-wrap: break-word;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+	color: var(--error-text-message);
+	transition: all 0.2s ease-in-out;
+}

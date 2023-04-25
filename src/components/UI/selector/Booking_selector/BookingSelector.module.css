@@ -10,7 +10,7 @@
     min-height: 40px;
     /* color: var(--first-main-color); */
 
-    border: 2px solid var(--cyan-color);
+    border: 2px solid var(--first-details-color);
     border-radius: 5px;
     background-color: transparent;
 }
@@ -28,7 +28,7 @@
     margin-bottom: 40px;
     width: 500px;
     height: 200px;
-    border: 1px solid var(--booking-theme-color);
+    border: 1px solid var(--first-details-color);
 }
 
 .box_disabled {

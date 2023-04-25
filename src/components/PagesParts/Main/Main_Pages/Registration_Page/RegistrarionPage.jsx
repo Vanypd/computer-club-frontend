@@ -10,9 +10,11 @@ import { root } from '../../../../..';
 import App from '../../../../../App';
 import MainStyleBtn from '../../../../UI/button/main_style_button/MainStyleBtn';
 import useInput from '../../../../../Hooks/useInput';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationPage = () => {
 
+    const navigate = useNavigate()
     const [formErrorMsg, setFormErrorMsg] = useState('')
 
     // const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -37,9 +39,11 @@ const RegistrationPage = () => {
             let user = {
                 id: id,
                 name: name.value,
+                login: email.value,
                 email: email.value,
                 phone: phone.value,
                 password: password.value,
+                roleId: 3
             }
 
             const requestOptions = {
@@ -50,9 +54,17 @@ const RegistrationPage = () => {
 
             fetch(POST_USERS_URL, requestOptions)
                 .then(function (response) {
+
+                    if (response.ok) {
+                        setFormErrorMsg('')
+
+                        navigate('/')
+                    }
+
                     return response.json();
                 })
                 .then(function (data) {
+
                     let responseCode = data.response;
 
                     if (responseCode == 'email exists') {
@@ -62,12 +74,7 @@ const RegistrationPage = () => {
                         setFormErrorMsg('Пользователь с таким номером уже существует')
 
                     } else {
-                        setFormErrorMsg('')
-
-                        root.render(
-                            <App />
-                        );
-
+                        setFormErrorMsg('Что-то пошло не так')
                     }
                 })
                 .catch(function (error) {

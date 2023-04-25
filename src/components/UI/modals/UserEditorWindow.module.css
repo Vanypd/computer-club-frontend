@@ -35,7 +35,6 @@
 	min-height: var(--height);
 	min-width: var(--width);
 	max-height: calc(var(--height) + 50px);
-	/* background-color: var(--main-color); */
 	background-image: linear-gradient(150deg, rgba(213, 4, 85, .6), rgba(53, 72, 190, .6) 60%);
 	backdrop-filter: blur(10px);
 	border-radius: 10px;
@@ -78,7 +77,7 @@
 }
 
 .form_place:focus {
-    outline: 1px solid var(--cyan-color);
+    outline: 1px solid var(--first-details-color);
     outline-offset: 3px;
     border-radius: 3px
 }

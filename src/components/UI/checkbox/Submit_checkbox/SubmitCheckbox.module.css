@@ -17,7 +17,7 @@
 
 .checkbox_label:hover,
 .checkbox_label:hover span {
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 	transform: scale(101%);
 }
 
@@ -44,7 +44,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
-	border-color: var(--cyan-color);
+	border-color: var(--first-details-color);
 }
 
 .checkbox {

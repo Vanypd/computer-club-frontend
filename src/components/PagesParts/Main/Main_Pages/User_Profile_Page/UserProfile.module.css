@@ -1,7 +1,7 @@
 @import url(../../../../../css/GLOBAL_STYLES.css);
 
 .container {
-    display: flex;
+	display: flex;
 	position: relative;
 	margin: auto;
 	margin-top: 10vh;
@@ -10,7 +10,8 @@
 	flex-grow: 1;
 	min-width: 290px;
 	max-width: 1366px;
-    min-height: 85vh;
+	min-height: 750px;
+	max-height: 750px;
 	padding: 50px 50px;
 	background-color: rgba(0, 0, 0, .5);
 	backdrop-filter: blur(10px);
@@ -19,20 +20,46 @@
 	transition: all 1s ease-in-out;
 }
 
-.profile_nav {
-    flex-grow: 0;
-    margin-right: 30px;
-    width: 400px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-
-    /* border: 1px solid black; */
+.profile_nav_block {
+	display: flex;
+	flex-grow: 0;
+	flex-direction: column;
+	margin-right: 30px;
+	width: 400px;
+	border-top: 1px solid var(--first-details-color);
+	border-bottom: 1px solid var(--first-details-color);
 }
 
-.profile_nav_page {
-    flex-grow: 1;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+.profile_nav {
+	flex-basis: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
 
-    /* border: 1px solid black; */
+.profile_nav_title_block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+	height: 100px;
+	background-color: rgba(0, 0, 0, .5);
+	border-left: 1px solid var(--first-details-color);
+	border-right: 1px solid var(--first-details-color);
+	border-bottom: 1px solid var(--first-details-color);
+}
+
+.profile_nav_title {
+	text-align: center;
+	font-size: 25px;
+	font-weight: 800;
+	color: var(--first-details-color);
+}
+
+
+.profile_nav_pages_block {
+	display: flex;
+	flex-grow: 1;
+	border-top: 1px solid var(--first-details-color);
+	border-bottom: 1px solid var(--first-details-color);
+
+	
 }

@@ -17,8 +17,8 @@
 
 @keyframes loading {
 	to {
-		text-shadow: 0 0 40px var(--cyan-color);
-		color: var(--cyan-color);
+		text-shadow: 0 0 40px var(--first-details-color);
+		color: var(--first-details-color);
 	}
 }
 

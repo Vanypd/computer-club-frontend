@@ -20,12 +20,12 @@
 }
 
 .back_btn_link:focus {
-	outline: var(--cyan-color) 1px solid;
+	outline: var(--first-details-color) 1px solid;
 }
 
 .back_btn_link:hover {
 	background-color: rgb(0, 0, 0, 0.3);
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 }
 
 .back_btn_link:active {

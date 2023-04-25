@@ -8,21 +8,9 @@ import classes from './HomePage.module.css'
 import Hero from './Hero/Hero';
 import Games from './Games/Games';
 
-const HomePage = () => {
+const HomePage = ({scrollPosition, ...props}) => {
 
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-      const position = window.scrollY;
-      setScrollPosition(position);
-  };
-  
-  useEffect(() => {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-  
-      return () => {
-          window.removeEventListener('scroll', handleScroll);
-      };
-  }, []);
+
 
   return (
     <main className="main">

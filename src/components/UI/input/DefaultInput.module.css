@@ -13,7 +13,7 @@
 }
 
 .default:focus {
-	outline: 1px solid var(--cyan-color);
+	outline: 1px solid var(--first-details-color);
 	outline-offset: 3px;
 	border-radius: 3px
 }

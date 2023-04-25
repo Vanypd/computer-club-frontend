@@ -1,4 +1,4 @@
-@import url(../../../../../../css/GLOBAL_STYLES.css);
+@import url(../../../../../../../css/GLOBAL_STYLES.css);
 
 .section {
 	/* background-image: url('https://img-cdn.tinkoffjournal.ru/-/american-psycho-1234.1dai5n..gif'); */
@@ -17,6 +17,9 @@
 	height: 150px;
 	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
+
+
+
 
 .container {
 	display: flex;

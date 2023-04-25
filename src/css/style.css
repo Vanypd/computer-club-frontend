@@ -71,7 +71,7 @@ h1 {
 mark {
 	background-color: rgba(0, 0, 0, .3);
 	padding: 2.5px 0 4px 2px;
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 	font-size: 16px;
 }
 
@@ -92,24 +92,24 @@ mark {
 	font-size: 18px;
 	font-weight: 400;
 	background-color: transparent;
-	border: 2px solid var(--cyan-color);
+	border: 2px solid var(--first-details-color);
 	border-radius: 10px;
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .form_btn:focus {
-	outline: 1px solid var(--cyan-color);
+	outline: 1px solid var(--first-details-color);
 	outline-offset: 2px;
 }
 
 .form_btn:hover {
-	background-color: var(--cyan-color);
+	background-color: var(--first-details-color);
 	color: #fff;
-	box-shadow: 0 0 5px var(--cyan-color),
-		0 0 25px var(--cyan-color),
-		0 0 50px var(--cyan-color),
-		0 0 100px var(--cyan-color);
+	box-shadow: 0 0 5px var(--first-details-color),
+		0 0 25px var(--first-details-color),
+		0 0 50px var(--first-details-color),
+		0 0 100px var(--first-details-color);
 }
 
 .form_btn:active {
@@ -132,9 +132,9 @@ mark {
 	font-weight: 400;
 	margin-bottom: 30px;
 	background-color: transparent;
-	border: 2px solid var(--cyan-color);
+	border: 2px solid var(--first-details-color);
 	border-radius: 10px;
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -144,31 +144,21 @@ mark {
 }
 
 .home_page_link:focus {
-	outline: 1px solid var(--cyan-color);
+	outline: 1px solid var(--first-details-color);
 	outline-offset: 2px;
 }
 
 .home_page_link:hover {
-	background-color: var(--cyan-color);
+	background-color: var(--first-details-color);
 	color: #fff;
-	box-shadow: 0 0 5px var(--cyan-color),
-		0 0 50px var(--cyan-color);
+	box-shadow: 0 0 5px var(--first-details-color),
+		0 0 50px var(--first-details-color);
 
 }
 
 .home_page_link:active {
 	filter: brightness(70%);
 	transform: scale(90%);
-}
-
-.home_page_container {
-	display: block;
-	margin: 0 auto;
-	max-width: 1366px;
-	min-width: 290px;
-	font-weight: 600;
-	line-height: 30px;
-
 }
 
 .header_link {
@@ -282,29 +272,29 @@ mark {
 	height: 50px;
 	font-size: 12px;
 	background-color: transparent;
-	border: 2px solid var(--cyan-color);
+	border: 2px solid var(--first-details-color);
 	border-radius: 10px;
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .user_item_btn:focus {
-	outline: 1px solid var(--cyan-color);
+	outline: 1px solid var(--first-details-color);
 	outline-offset: 2px;
 }
 
 .user_item_btn:hover {
-	background-color: var(--cyan-color);
+	background-color: var(--first-details-color);
 	color: #fff;
-	box-shadow: 0 0 5px var(--cyan-color),
-		0 0 50px var(--cyan-color);
+	box-shadow: 0 0 5px var(--first-details-color),
+		0 0 50px var(--first-details-color);
 
 }
 
 .user_item_btn:active {
 	filter: brightness(70%);
 	transform: scale(90%);
-	outline: 0px solid var(--cyan-color);
+	outline: 0px solid var(--first-details-color);
 	outline-offset: 0px;
 }
 
@@ -324,7 +314,7 @@ mark {
 .user_item_delete_btn:active {
 	filter: brightness(70%);
 	transform: scale(90%);
-	outline: 0px solid var(--cyan-color);
+	outline: 0px solid var(--first-details-color);
 	outline-offset: 0px;
 }
 
@@ -337,7 +327,7 @@ mark {
 
 .editor_window_label {
 	font-size: 16px;
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 }
 
 .editor_window_place_div {
@@ -352,29 +342,29 @@ mark {
 	height: 50px;
 	font-size: 12px;
 	background-color: transparent;
-	border: 2px solid var(--cyan-color);
+	border: 2px solid var(--first-details-color);
 	border-radius: 10px;
-	color: var(--cyan-color);
+	color: var(--first-details-color);
 	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .editor_window_submit:focus {
-	outline: 1px solid var(--cyan-color);
+	outline: 1px solid var(--first-details-color);
 	outline-offset: 2px;
 }
 
 .editor_window_submit:hover {
-	background-color: var(--cyan-color);
+	background-color: var(--first-details-color);
 	color: #fff;
-	box-shadow: 0 0 5px var(--cyan-color),
-		0 0 50px var(--cyan-color);
+	box-shadow: 0 0 5px var(--first-details-color),
+		0 0 50px var(--first-details-color);
 
 }
 
 .editor_window_submit:active {
 	filter: brightness(70%);
 	transform: scale(90%);
-	outline: 0px solid var(--cyan-color);
+	outline: 0px solid var(--first-details-color);
 	outline-offset: 0px;
 }
 
@@ -390,11 +380,11 @@ mark {
 }
 
 .editor_window_close:focus {
-	outline: 1px solid var(--cyan-color);
+	outline: 1px solid var(--first-details-color);
 }
 
 .editor_window_close:hover {
-	fill: var(--cyan-color);
+	fill: var(--first-details-color);
 }
 
 .editor_window_close:active {

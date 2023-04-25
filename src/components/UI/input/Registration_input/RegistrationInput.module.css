@@ -8,7 +8,7 @@
 .input_box input:valid~label {
     top: -35px;
     left: 0;
-    color: var(--cyan-color);
+    color: var(--first-details-color);
     font-size: 12px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .form_place:focus {
-    outline: 1px solid var(--cyan-color);
+    outline: 1px solid var(--first-details-color);
     outline-offset: 3px;
     border-radius: 3px
 }
