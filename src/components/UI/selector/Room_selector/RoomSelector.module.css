@@ -1,0 +1,96 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.selector_box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.selector_container {
+    display: inline-block;
+}
+
+.selector {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    width: 250px;
+    height: 50px;
+    cursor: pointer;
+
+    border: 2px solid var(--first-details-color);
+    border-radius: 30px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.selector:hover {
+    transition: all 0.1s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.selector_active {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: none;
+}
+
+.selector span {
+    font-size: 16px;
+    text-align: center;
+}
+
+.selector_char {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    fill: var(--first-details-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.selector_char_active {
+    transform: rotate(0deg);
+}
+
+.selector_menu {
+    position: absolute;
+    top: 53px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 0px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.selector_menu_active {
+    height: 150px;
+    opacity: 1;
+}
+
+.selector_option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+}
+
+.selector_option:hover {
+    color: var(--first-details-color);
+    background-color: rgba(0, 0, 0, 0.5);
+}

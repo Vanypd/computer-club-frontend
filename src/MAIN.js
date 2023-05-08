@@ -13,7 +13,9 @@ export const POST_USERS_URL = MAIN_URL + '/user/add';
 // BOOKING //
 
 export const POST_BOOKING_ORDER_URL = MAIN_URL + '/order/add-order'
-export const GET_BOOKING_ORDER_URL = MAIN_URL + '/order/orderslist/'
+
+export const GET_BOOKING_PLACES_URL = MAIN_URL + '/order/orderslistbydate/'
+export const GET_BOOKING_ORDER_URL = MAIN_URL + '/order/orderslistbydate/'
 
 // AUTH //
 
@@ -29,7 +31,8 @@ export const CookieManager = {
         let matches = document.cookie.match(new RegExp(
             "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
         ));
-        return matches ? decodeURIComponent(matches[1]) : '';
+
+        return matches ? decodeURIComponent(matches[1]) : ''; 
     },
 
     logIn: function (token, userid) {

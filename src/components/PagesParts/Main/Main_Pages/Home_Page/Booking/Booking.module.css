@@ -1,6 +1,8 @@
 @import url(../../../../../../css/GLOBAL_STYLES.css);
 
 .section {
+	position: relative;
+	
 	/* background-image: url('https://img-cdn.tinkoffjournal.ru/-/american-psycho-1234.1dai5n..gif'); */
 	background-repeat: no-repeat;
 	background-position: center;
@@ -18,92 +20,8 @@
 	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
 
-.container {
-	display: flex;
+.booking_modals {
 	position: relative;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: auto;
-	margin-bottom: 150px;
-
-	min-height: 600px;
-	max-width: 700px;
-	padding: 70px 50px;
-	background-color: rgba(0, 0, 0, .5);
-	backdrop-filter: blur(10px);
-	border-radius: 10px;
-	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
-	opacity: 0;
-	transform: translateX(-300px);
-	transition: all 1s ease-in-out;
-}
-
-.container_active {
-	transform: translateX(0);
-	opacity: 1;
-}
-
-.booking_form {
-	display: flex;
-	position: relative;
-	margin: 0 auto;
-	flex-direction: column;
-	justify-content: space-between;
-	transition: all 0.5s ease-in-out;
-}
-
-.container_top {
-	position: relative;
-	display: flex;
-}
-
-.container_mid {
-	position: relative;
-	display: flex;
-}
-
-.container_bot {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-}
-
-.booking_message {
-	width: auto;
-	margin: 0 auto;
-	margin-bottom: 5px;
-	text-align: center;
-	color: var(--error-text-message);
-	background-color: rgba(0, 0, 0, .5);
-}
-
-.booking_finished_info {
-	position: relative;
-	display: block;
-	color: rgb(255, 255, 255);
-	filter: drop-shadow(3px 3px 0px #000);
-	font-weight: 400;
-	font-size: 35px;
-	line-height: 40px;
-}
-
-.booking_finished {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	text-align: center;
-	animation: windowAnim 1s ease-in-out;
-
-}
-
-@keyframes windowAnim {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
+	height: 600px;
+	width: 100%;
 }

@@ -18,9 +18,14 @@
 	--second-main-color: #3548be;
 
 	--page-theme-color: #1e1e1e;
-	animation: lgbt 3s ease-in-out;
-	--first-details-color: #71bbff;
+
+	/* --first-details-color: #71bbff; */
+	--first-details-color: #2084e1;
 	--second-details-color: #7754c9;
+
+	/* --places-map-color: #009245; */
+	--places-map-color: #2084e1;
+
 	--delete-red-color: #ff2e2e;
 	--error-text-message: #d43131;
 

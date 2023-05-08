@@ -1,0 +1,184 @@
+@import url(../../../../css/GLOBAL_STYLES.css);
+
+.place_box {
+    display: inline-block;
+    position: relative;
+}
+
+/* SVG PLACE SIDES */
+
+.place_svg_top {
+    position: absolute;
+    left: 7px;
+    bottom: 26px;
+    z-index: -1;
+    transform: rotate(-90deg);
+    fill: var(--places-map-color);
+}
+
+.place_svg_right {
+    position: absolute;
+    top: 5px;
+    left: 26px;
+    z-index: -1;
+    fill: var(--places-map-color);
+}
+
+.place_svg_bottom {
+    position: absolute;
+    left: 7px;
+    top: 26px;
+    z-index: -1;
+    transform: rotate(90deg);
+    fill: var(--places-map-color);
+}
+
+.place_svg_left {
+    position: absolute;
+    top: 5px;
+    right: 26px;
+    z-index: -1;
+    transform: rotate(180deg);
+    fill: var(--places-map-color);
+}
+
+/*  */
+
+/* SVG PS SIDES */
+
+.place_PS_svg_top {
+    position: absolute;
+    left: -18px;
+    top: -18px;
+    z-index: -1;
+    transform: rotate(-180deg);
+    fill: var(--places-map-color);
+}
+
+.place_PS_svg_right {
+    position: absolute;
+    top: 5px;
+    left: 26px;
+    z-index: -1;
+    fill: var(--places-map-color);
+}
+
+.place_PS_svg_bottom {
+    position: absolute;
+    left: -18px;
+    bottom: -18px;
+    z-index: -1;
+    transform: rotate(0deg);
+    fill: var(--places-map-color);
+}
+
+.place_PS_svg_left {
+    position: absolute;
+    top: 5px;
+    right: 26px;
+    z-index: -1;
+    transform: rotate(180deg);
+    fill: var(--places-map-color);
+}
+
+/*  */
+
+/* BUTTON TEXT SIDES */
+
+.btn_text_bottom {
+    transform: rotate(0deg);
+    font-size: 12px;
+}
+
+.btn_text_left {
+    transform: rotate(90deg);
+    font-size: 12px;
+}
+
+.btn_text_top {
+    transform: rotate(180deg);
+    font-size: 12px;
+}
+
+.btn_text_right {
+    transform: rotate(270deg);
+    font-size: 12px;
+}
+
+/*  */
+
+/* PLACE BUTTON */
+
+.box_place_button {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    z-index: 19;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: var(--page-theme-color);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.box_place_button:hover {
+    background-color: var(--places-map-color);
+    color: white;
+    box-shadow: 0px 0px 15px var(--places-map-color);
+}
+
+.box_place_button:active {
+    transform: scale(95%);
+    filter: brightness(70%);
+}
+
+.box_place_button_active {
+    background-color: var(--places-map-color);
+    box-shadow: 0px 0px 15px var(--places-map-color);
+    pointer-events: none;
+}
+
+/*  */
+
+/* PLACE PS BUTTON */
+
+.box_PS_button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 54px;
+    width: 84px;
+    z-index: 19;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: var(--page-theme-color);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.box_PS_button:hover {
+    background-color: var(--places-map-color);
+    color: white;
+    box-shadow: 0px 0px 15px var(--places-map-color);
+}
+
+.box_PS_button:active {
+    transform: scale(95%);
+    filter: brightness(70%);
+}
+
+.box_PS_button_active {
+    background-color: var(--places-map-color);
+    box-shadow: 0px 0px 15px var(--places-map-color);
+    pointer-events: none;
+}
+
+/*  */
+
+.booked {
+    pointer-events: none;
+    background-color: rgb(160, 160, 160);
+    border-color: var(--delete-red-color);
+}

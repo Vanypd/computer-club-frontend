@@ -7,6 +7,7 @@ import { CookieManager, GET_USER_URL } from '../../../../../MAIN';
 import ProfileLogout from './User_Profile_settings_pages/User_Profile_Logout/ProfileLogout';
 import { useNavigate } from 'react-router-dom';
 import MainStyleBtn from '../../../../UI/button/main_style_button/MainStyleBtn';
+import ProfileOrdersHistory from './User_Profile_settings_pages/User_Profile_Orders_History/ProfileOrdersHistory';
 
 
 const UserProfile = ({ isLogged, setLogged, ...props }) => {
@@ -42,7 +43,8 @@ const UserProfile = ({ isLogged, setLogged, ...props }) => {
     const pageSelector = () => {
         switch (selectedButton) {
             case 1: return <ProfilePersonalInformation user={authorizedUser} />
-            case 2: return <ProfileLogout setLogged={setLogged} user={authorizedUser} />
+            case 2: return <ProfileOrdersHistory user={authorizedUser}/>
+            case 3: return <ProfileLogout setLogged={setLogged} user={authorizedUser} />
             default: return <ProfilePersonalInformation user={authorizedUser} />
         }
     }
@@ -62,7 +64,8 @@ const UserProfile = ({ isLogged, setLogged, ...props }) => {
                     </div>
                     <div className={classes.profile_nav}>
                         <UserProfileNavBtn selectedButton={selectedButton} setButton={setSelectedButton} btnNumber={1}>Личные данные</UserProfileNavBtn>
-                        <UserProfileNavBtn selectedButton={selectedButton} setButton={setSelectedButton} btnNumber={2}>Выход с аккаунта</UserProfileNavBtn>
+                        <UserProfileNavBtn selectedButton={selectedButton} setButton={setSelectedButton} btnNumber={2}>Записи</UserProfileNavBtn>
+                        <UserProfileNavBtn selectedButton={selectedButton} setButton={setSelectedButton} btnNumber={3}>Выход с аккаунта</UserProfileNavBtn>
 
 
                         <MainStyleBtn styles={{ display: 'flex', marginTop: '100px' }} onClick={toUsersPage}>Просмотр пользователей</MainStyleBtn>

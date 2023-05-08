@@ -23,6 +23,7 @@
 .box_cell_button {
     height: 100%;
     width: 100%;
+    cursor: pointer;
     border: none;
     border-radius: 5px;
     background-color: transparent;
