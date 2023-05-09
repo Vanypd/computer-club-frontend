@@ -10,7 +10,7 @@ import Users from './users';
 import { CookieManager } from './MAIN';
 
 function App() {
-  const [isLogged, setLogged] = useState(false)
+  const [isLogged, setLogged] = useState(true)
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {

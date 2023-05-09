@@ -23,10 +23,17 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
                         console.log(result)
                         const array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-                        // for (let i = 0; i < result.length; i++) {
-                        //     let elementOf = result[i];
-                        //     console.log(result)
-                        // }
+                        for (let i = 0; i < result.length; i++) {
+                            let elementOf = result[i];
+
+                            const pcId = elementOf.pcId
+
+                            // console.log(result)
+                            // console.log(elementOf)
+                            // console.log(pcId)
+
+                            array[pcId] = 1
+                        }
 
                         setDayPlacesList(array)
                     },
@@ -48,7 +55,7 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
     const book = () => {
         // setBookIsFinished(true)
 
-console.log(CookieManager.getCookie('token'))
+        console.log(CookieManager.getCookie('token'))
 
         setButtonDisabler(true)
 

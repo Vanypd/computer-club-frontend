@@ -1,7 +1,6 @@
 .profile_nav_pages {
 	display: block;
 	flex-basis: 100%;
-	padding: 0 50px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	animation: pageActive 1s ease-in-out;
@@ -19,15 +18,20 @@
 	}
 }
 
-.orders_history_item {
+.order_history_sort_menu {
 	display: flex;
-	position: relative;
-	width: 100%;
-	height: 100px;
-	justify-content: center;
 	align-items: center;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border-radius: 10px;
+	height: 50px;
+	border-bottom: 1px solid var(--first-details-color);
 	background-color: rgba(0, 0, 0, 0.3);
 }
+
+.order_history_sort_selector_box {
+	display: flex;
+	padding-left: 30px;
+}
+
+.order_history_items_box {
+	padding: 0 50px;
+}
+

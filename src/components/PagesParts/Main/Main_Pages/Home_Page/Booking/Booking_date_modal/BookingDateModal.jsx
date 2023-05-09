@@ -25,36 +25,36 @@ const BookingDateModal = ({selectedRoom, setSelectedRoom, selectedCell, setSelec
     }, [selectedRoom])
 
     useEffect(() => {
-        const getDayList = () => {
+        // const getDayList = () => {
 
-            fetch(GET_BOOKING_ORDER_URL + selectedDate)
-                .then(response => response.json())
-                .then(
-                    (result) => {
+        //     fetch(GET_BOOKING_ORDER_URL + selectedDate)
+        //         .then(response => response.json())
+        //         .then(
+        //             (result) => {
 
-                        const array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        //                 const array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-                        for (let i = 0; i < result.length; i++) {
-                            let elementOf = result[i];
-                            console.log(result)
+        //                 for (let i = 0; i < result.length; i++) {
+        //                     let elementOf = result[i];
+        //                     console.log(result)
 
-                            let fullDate = elementOf.appointmentFullDate
-                            let date = new Date(fullDate)
-                            let cell = date.getHours()
-                            array[cell] = 1;
-                        }
+        //                     let fullDate = elementOf.appointmentFullDate
+        //                     let date = new Date(fullDate)
+        //                     let cell = date.getHours()
+        //                     array[cell] = 1;
+        //                 }
 
-                        // setDayList(array)
-                    },
-                    (error) => {
-                        console.log(error)
-                    }
-                )
-        }
+        //                 setDayList(array)
+        //             },
+        //             (error) => {
+        //                 console.log(error)
+        //             }
+        //         )
+        // }
 
         if (selectedDate != '') {
             setSelectedCell('')
-            getDayList([])
+            // getDayList([])
             setTimeCellsDisabler(false)
         }
     }, [selectedDate])

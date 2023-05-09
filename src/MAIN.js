@@ -17,11 +17,11 @@ export const POST_BOOKING_ORDER_URL = MAIN_URL + '/order/add-order'
 export const GET_BOOKING_PLACES_URL = MAIN_URL + '/order/orderslistbydate/'
 export const GET_BOOKING_ORDER_URL = MAIN_URL + '/order/orderslistbydate/'
 
+export const GET_ORDERSLIST_BY_USER = MAIN_URL + '/order/orderslistbyuserid/'
+
 // AUTH //
 
 export const POST_AUTH_URL = MAIN_URL + '/user/auth';
-
-
 
 // COOCKIES //
 
