@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import classes from './ProfileOrdersHistory.module.css'
 import OrdersHistoryItem from './Orders_history_item/OrdersHistoryItem'
 import { CookieManager, GET_ORDERSLIST_BY_USER } from '../../../../../../../MAIN'
@@ -7,27 +7,29 @@ import SortSelector from '../../../../../../UI/selector/Sort_selector/SortSelect
 const ProfileOrdersHistory = ({ user }) => {
 
     const [sortValue, setSortValue] = useState('по дате')
+    const [ordersHistoryItems, setOrdersHistoryItems] = useState([])
+    const [sortedItems, setSortedItems] = useState([])
 
-    const [ordersHistoryItems, setOrdersHistoryItems] = useState([
+    const testItems = [
         {
-            id: 15,
+            id: 228,
             appointmentFullDate: '2023-05-08T05:00:00',
             roomId: 0,
             pcId: 12,
         },
         {
-            id: 12,
+            id: 1337,
             appointmentFullDate: '2023-05-09T22:00:00',
             roomId: 0,
             pcId: 17,
         },
         {
-            id: 21,
+            id: 1488,
             appointmentFullDate: '2023-05-09T12:00:00',
             roomId: 0,
             pcId: 3,
         },
-    ])
+    ]
 
     const sortOrdersHistory = (sort) => {
         setSortValue(sort)
@@ -46,9 +48,11 @@ const ProfileOrdersHistory = ({ user }) => {
             }
         }
 
+        console.log('sorted')
 
-        setOrdersHistoryItems([...ordersHistoryItems].sort((a, b) => sorter(a, b)))
+        setSortedItems([...ordersHistoryItems].sort((a, b) => sorter(a, b)))
     }
+
 
     useEffect(() => {
         fetch(GET_ORDERSLIST_BY_USER + CookieManager.getCookie('userid'))
@@ -56,15 +60,18 @@ const ProfileOrdersHistory = ({ user }) => {
             .then(
                 (result) => {
                     setOrdersHistoryItems(result);
-                    console.log(result)
                 },
                 (error) => {
                     console.log('error: ' + error)
                 }
             )
-
-        sortOrdersHistory('по дате')
     }, [])
+
+    useEffect(() => {
+        if (ordersHistoryItems.length != 0) {
+            sortOrdersHistory('по дате');
+        }
+    }, [ordersHistoryItems])
 
     return (
         <div className={classes.profile_nav_pages}>
@@ -74,8 +81,8 @@ const ProfileOrdersHistory = ({ user }) => {
                         value={sortValue}
                         setSort={sortOrdersHistory}
                         options={[
-                            { name: 'по id' },
                             { name: 'по дате' },
+                            { name: 'по id' },
                             { name: 'по номеру PC' }
                         ]}
                     />
@@ -84,9 +91,11 @@ const ProfileOrdersHistory = ({ user }) => {
 
             <div className={classes.order_history_items_box}>
                 {
-                    ordersHistoryItems.map(item =>
-                        <OrdersHistoryItem key={item.id} id={item.id} date={item.appointmentFullDate} roomid={item.roomId} pcid={item.pcId} />
-                    )
+                    (sortedItems.length != 0)
+                        ? sortedItems.map(item =>
+                            <OrdersHistoryItem key={item.id} id={item.id} date={item.appointmentFullDate} roomid={item.roomId} pcid={item.pcId} />
+                        )
+                        : <div className={classes.order_history_empty}>{'Вы не делали ещё ни одного заказа :('}</div>
                 }
             </div>
 

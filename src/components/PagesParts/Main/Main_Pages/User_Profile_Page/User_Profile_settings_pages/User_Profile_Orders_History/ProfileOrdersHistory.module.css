@@ -35,3 +35,14 @@
 	padding: 0 50px;
 }
 
+.order_history_empty {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	padding-top: 100px;
+	font-size: 30px;
+
+
+}

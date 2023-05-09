@@ -6,7 +6,7 @@ import { CookieManager, GET_BOOKING_PLACES_URL, POST_BOOKING_ORDER_URL } from '.
 
 const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedPlace, setSelectedPlace, dateChosen, setDateChosen, bookIsFinished, setBookIsFinished }) => {
 
-    const [dayPlacesList, setDayPlacesList] = useState([0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1])
+    const [dayPlacesList, setDayPlacesList] = useState([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
     const [buttonDisabler, setButtonDisabler] = useState(true);
     const [bookingMessage, setBookingMessage] = useState('');
@@ -25,12 +25,7 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
 
                         for (let i = 0; i < result.length; i++) {
                             let elementOf = result[i];
-
                             const pcId = elementOf.pcId
-
-                            // console.log(result)
-                            // console.log(elementOf)
-                            // console.log(pcId)
 
                             array[pcId] = 1
                         }

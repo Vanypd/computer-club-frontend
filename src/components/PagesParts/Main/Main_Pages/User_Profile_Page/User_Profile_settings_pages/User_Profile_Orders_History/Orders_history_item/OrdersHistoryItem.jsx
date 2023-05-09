@@ -16,16 +16,16 @@ const OrdersHistoryItem = ({ id, date, roomid, pcid }) => {
     const getFormattedDate = () => {
         const dateObject = new Date(date)
         const yyyy = dateObject.getFullYear()
-        const mm = (dateObject.getMonth() > 10) ? dateObject.getMonth() : '0' + dateObject.getMonth()
-        const dd = (dateObject.getDate() > 10) ? dateObject.getDate() : '0' + dateObject.getDate()
+        const mm = (dateObject.getMonth() >= 10) ? dateObject.getMonth() : '0' + dateObject.getMonth()
+        const dd = (dateObject.getDate() >= 10) ? dateObject.getDate() : '0' + dateObject.getDate()
 
         return dd + '.' + mm + '.' + yyyy
     }
 
     const getFormattedTime = () => {
         const dateObject = new Date(date)
-        const hours = (dateObject.getHours() > 10) ? dateObject.getHours() : '0' + dateObject.getHours()
-        const minutes = (dateObject.getMinutes() > 10) ? dateObject.getMinutes() : '0' + dateObject.getMinutes()
+        const hours = (dateObject.getHours() >= 10) ? dateObject.getHours() : '0' + dateObject.getHours()
+        const minutes = (dateObject.getMinutes() >= 10) ? dateObject.getMinutes() : '0' + dateObject.getMinutes()
 
         return hours + ':' + minutes
     }
