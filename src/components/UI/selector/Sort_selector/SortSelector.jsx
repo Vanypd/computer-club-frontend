@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import classes from './SortSelector.module.css'
 
-const SortSelector = ({options}) => {
+const SortSelector = ({ options, value, setSort }) => {
     const [isActive, setActive] = useState(false)
-    const [lable, setLable] = useState('Сортировать по')
+    const [lable, setLable] = useState('по дате')
     const rootEl = useRef(null);
 
     const activeChanger = () => {
@@ -13,8 +13,7 @@ const SortSelector = ({options}) => {
 
     const selectOption = (e) => {
         setLable(e.target.innerHTML)
-        console.log(e.target.innerHTML)
-
+        setSort(e.target.innerHTML)
         setActive(false)
     }
 
@@ -39,9 +38,9 @@ const SortSelector = ({options}) => {
                     </span>
                 </div>
                 <div className={isActive ? [classes.selector_menu, classes.selector_menu_active].join(' ') : classes.selector_menu}>
-                    {options.map(option => 
-                        <div onClick={(e) => selectOption(e)} className={classes.selector_option}>{option.name}</div>
-                        )}
+                    {options.map(option =>
+                        <div key={option.name} onClick={(e) => selectOption(e)} className={classes.selector_option}>{option.name}</div>
+                    )}
                 </div>
 
             </div>

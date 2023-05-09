@@ -6,6 +6,8 @@ import SortSelector from '../../../../../../UI/selector/Sort_selector/SortSelect
 
 const ProfileOrdersHistory = ({ user }) => {
 
+    const [sortValue, setSortValue] = useState('по дате')
+
     const [ordersHistoryItems, setOrdersHistoryItems] = useState([
         {
             id: 15,
@@ -13,14 +15,12 @@ const ProfileOrdersHistory = ({ user }) => {
             roomId: 0,
             pcId: 12,
         },
-
         {
             id: 12,
             appointmentFullDate: '2023-05-09T22:00:00',
             roomId: 0,
             pcId: 17,
         },
-
         {
             id: 21,
             appointmentFullDate: '2023-05-09T12:00:00',
@@ -29,8 +29,28 @@ const ProfileOrdersHistory = ({ user }) => {
         },
     ])
 
-    useEffect(() => {
+    const sortOrdersHistory = (sort) => {
+        setSortValue(sort)
+        let sortType = ''
 
+        if (sort == 'по id') { sortType = 'id' }
+        if (sort == 'по дате') { sortType = 'appointmentFullDate' }
+        if (sort == 'по номеру PC') { sortType = 'pcId' }
+
+
+        const sorter = (a, b) => {
+            if (typeof a[sortType] == "string") {
+                return (b[sortType].localeCompare(a[sortType]))
+            } else {
+                return (a[sortType] - b[sortType])
+            }
+        }
+
+
+        setOrdersHistoryItems([...ordersHistoryItems].sort((a, b) => sorter(a, b)))
+    }
+
+    useEffect(() => {
         fetch(GET_ORDERSLIST_BY_USER + CookieManager.getCookie('userid'))
             .then(response => response.json())
             .then(
@@ -42,6 +62,8 @@ const ProfileOrdersHistory = ({ user }) => {
                     console.log('error: ' + error)
                 }
             )
+
+        sortOrdersHistory('по дате')
     }, [])
 
     return (
@@ -49,10 +71,12 @@ const ProfileOrdersHistory = ({ user }) => {
             <div className={classes.order_history_sort_menu}>
                 <div className={classes.order_history_sort_selector_box}>
                     <SortSelector
+                        value={sortValue}
+                        setSort={sortOrdersHistory}
                         options={[
                             { name: 'по id' },
                             { name: 'по дате' },
-                            { name: 'по времени' }
+                            { name: 'по номеру PC' }
                         ]}
                     />
                 </div>
@@ -61,7 +85,7 @@ const ProfileOrdersHistory = ({ user }) => {
             <div className={classes.order_history_items_box}>
                 {
                     ordersHistoryItems.map(item =>
-                        <OrdersHistoryItem id={item.id} date={item.appointmentFullDate} roomid={item.roomId} pcid={item.pcId} />
+                        <OrdersHistoryItem key={item.id} id={item.id} date={item.appointmentFullDate} roomid={item.roomId} pcid={item.pcId} />
                     )
                 }
             </div>
