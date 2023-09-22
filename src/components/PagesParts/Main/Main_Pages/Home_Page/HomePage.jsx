@@ -7,11 +7,9 @@ import Articles from './Articles/Articles';
 import classes from './HomePage.module.css'
 import Hero from './Hero/Hero';
 import Games from './Games/Games';
+import Footer from '../../../Footer/Footer';
 
 const HomePage = ({scrollPosition, ...props}) => {
-
-
-
   return (
     <main className="main">
       {/* <AdminOptions /> */}
@@ -20,6 +18,7 @@ const HomePage = ({scrollPosition, ...props}) => {
       <AboutUs />
       <Games/>
       <Booking scrollPos={scrollPosition}/>
+      <Footer/>
     </main>
   )
 }

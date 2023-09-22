@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import UsersPage from "./components/PagesParts/Main/Main_Pages/Users_Page/UsersPage";
-import { TEST_URL } from './MAIN.js';
+// import { TEST_URL } from './MAIN.js';
 import { GET_USERS_URL } from './MAIN.js';
 import { DELETE_USERS_URL } from './MAIN.js';
 
 function Users() {
     const [errors, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [GettedUsers, setGettedUsers] = useState([]);
 
     const [userItems, setUserItems] = useState([])
     const [editorWindowActive, setEditorWindowActive] = useState(false)
