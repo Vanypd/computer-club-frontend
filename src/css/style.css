@@ -1,6 +1,8 @@
 @import url(GLOBAL_STYLES.css);
 
 html {
+	width: 100%;
+	overflow-x: hidden;
 	/* background-image: url('https://wallpaperaccess.com/full/4960562.jpg'); */
 	background-image: url('https://r4.wallpaperflare.com/wallpaper/288/623/752/technology-asus-rog-asus-hd-wallpaper-18566da81060cc38e0bc019ef802740a.jpg');
 	/* background-image: url('https://c4.wallpaperflare.com/wallpaper/380/523/681/design-neon-abstract-light-design-hd-wallpaper-preview.jpg'); */
