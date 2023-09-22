@@ -15,7 +15,7 @@ const useValidation = (value, validations, isDirty) => {
     const [noErrors, setNoErrors] = useState(false)
 
     const regMail = /^\w+@\w+\.\w+$/;
-    const regNumber = /^[0-9]$/
+    const regNumber = /^\d+$/;
 
     const fieldsErrorsResolver = async (specialField) => {
         switch (true) {
