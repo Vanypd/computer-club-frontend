@@ -1,7 +1,6 @@
 import React from 'react'
 import CreateUsersItems from '../../../../CreateUsersItems';
 import UserEditorWindow from '../../../../UI/modals/UserEditorWindow';
-import Header from '../../../Header/Header';
 import BackButton from '../../../../UI/button/back_button/BackButton';
 import classes from './UsersPage.module.css'
 

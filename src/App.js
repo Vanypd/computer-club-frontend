@@ -8,6 +8,7 @@ import RegistrationPage from './components/PagesParts/Main/Main_Pages/Registrati
 import UserProfile from './components/PagesParts/Main/Main_Pages/User_Profile_Page/UserProfile';
 import Users from './users';
 import { CookieManager } from './MAIN';
+import ErrorPage from './components/PagesParts/Main/Main_Pages/Error_Page/ErrorPage';
 
 function App() {
   const [isLogged, setLogged] = useState(false)
@@ -44,6 +45,7 @@ function App() {
           {isLogged && <Route path='/profile' element={<UserProfile isLogged={isLogged} setLogged={setLogged} />} />}
           {isLogged && <Route path='/users-list' element={<Users />} />}
           <Route path="/*" element={<Navigate to="/" replace />} />
+          <Route path="/error" element={<ErrorPage/>} />
         </Routes>
       </BrowserRouter>
     </div>

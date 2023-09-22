@@ -1,6 +1,4 @@
 import React from "react";
-import { root } from "../../../..";
-import App from "../../../../App";
 import classes from './BackButton.module.css'
 import { useNavigate } from "react-router-dom";
 
