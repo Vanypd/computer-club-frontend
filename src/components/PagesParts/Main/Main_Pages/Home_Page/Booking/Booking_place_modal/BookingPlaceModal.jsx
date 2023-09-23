@@ -50,8 +50,8 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
     const book = () => {
         setButtonDisabler(true)
         let selectedPC = selectedPlace
-        if (selectedPlace = '1PS') {selectedPC = 17}
-        if (selectedPlace = '2PS') {selectedPC = 18}
+        if (selectedPlace === '1PS') {selectedPC = 17}
+        if (selectedPlace === '2PS') {selectedPC = 18}
 
         const appointmentFullDate = selectedDate + 'T' + selectedCell + ':00'
 
