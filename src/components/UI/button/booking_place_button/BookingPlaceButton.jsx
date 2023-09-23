@@ -53,7 +53,7 @@ const BookingPlaceButton = ({ isPS, textSide, svgSide, booked, selectedPlace, se
     }
 
     const choosePlace = () => {
-        setSelectedPlace(parseInt(children, 10))
+        setSelectedPlace(children)
     }
 
     return ((isPS == true)

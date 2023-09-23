@@ -29,6 +29,13 @@
     justify-content: flex-end;
 }
 
+.version {
+    font-size: 25px;
+    /* align-self: flex-end; */
+    font-weight: 100;
+    margin-bottom: 70px
+}
+
 .company {
     font-size: 18px;
     font-weight: 200;

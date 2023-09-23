@@ -76,31 +76,31 @@ const VipRoomPlaces = ({ dayPlacesList, selectedPlace, setSelectedPlace }) => {
                 <div className={classes.plant_2}></div>
 
                 <div className={classes.places_div_1}>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[0]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>1</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[1]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>2</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[2]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>3</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[3]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>4</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[0]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>1</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[1]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>2</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[2]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>3</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[3]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>4</BookingPlaceButton>
                 </div>
 
                 <div className={classes.places_div_2}>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[4]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>5</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[5]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>6</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[6]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>7</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[7]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>8</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[4]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>5</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[5]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>6</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[6]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>7</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[7]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>8</BookingPlaceButton>
                 </div>
 
                 <div className={classes.places_div_3}>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[8]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>9</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[9]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>10</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[10]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>11</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'right'} booked={dayPlacesList[11]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>12</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[8]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>9</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[9]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>10</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[10]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>11</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'right'} isPS={false} booked={dayPlacesList[11]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>12</BookingPlaceButton>
                 </div>
 
                 <div className={classes.places_div_4}>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[12]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>13</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[13]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>14</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[14]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>15</BookingPlaceButton>
-                    <BookingPlaceButton svgSide={'left'} booked={dayPlacesList[15]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>16</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[12]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>13</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[13]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>14</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[14]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>15</BookingPlaceButton>
+                    <BookingPlaceButton svgSide={'left'} isPS={false} booked={dayPlacesList[15]} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace}>16</BookingPlaceButton>
                 </div>
 
                 <div className={classes.PS_div_1}>

@@ -27,7 +27,7 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
                             let elementOf = result[i];
                             const pcId = elementOf.pcId
 
-                            array[pcId] = 1
+                            array[pcId - 1] = 1
                         }
 
                         setDayPlacesList(array)
@@ -48,11 +48,10 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
     }, [selectedCell])
 
     const book = () => {
-        // setBookIsFinished(true)
-
-        console.log(CookieManager.getCookie('token'))
-
         setButtonDisabler(true)
+        let selectedPC = selectedPlace
+        if (selectedPlace = '1PS') {selectedPC = 17}
+        if (selectedPlace = '2PS') {selectedPC = 18}
 
         const appointmentFullDate = selectedDate + 'T' + selectedCell + ':00'
 
@@ -61,7 +60,7 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
             appointmentFullDate: appointmentFullDate,
             appointmentDay: selectedDate,
             roomId: selectedRoom,
-            pcId: selectedPlace,
+            pcId: selectedPC,
             user: {
                 id: parseInt(CookieManager.getCookie('userid'), 10),
                 name: "string",
@@ -73,8 +72,6 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
 
             }
         }
-
-        console.log(userArray)
 
         const requestOptions = {
             method: 'POST',
@@ -106,6 +103,7 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
                     if (responseCode == 'Unauthorized') {
                         setBookingMessage('Авторизуйтесь чтобы продолжить')
                     }
+                    setBookingMessage('Что-то пошло не так...')
                 }
             })
             .catch(function (error) {

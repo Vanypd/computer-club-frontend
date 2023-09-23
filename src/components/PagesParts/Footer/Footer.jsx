@@ -7,6 +7,7 @@ const Footer = () => {
             <div className={classes.container}>
                 <div className={classes.footer_info}>
                     <div className={classes.text_block}>
+                        <div className={classes.version}>release 1.2</div>
                         <div className={classes.company}>© CyberT, 2023</div>
                         <div className={classes.notification}>На сайте упоминаются социальные сети Фейсбук / Инстаграм, принадлежащие Meta Platforms Inc., деятельность которой запрещена на территории РФ в части реализации данных социальных сетей на основании осуществления ею экстремистской деятельности</div>
                     </div>
