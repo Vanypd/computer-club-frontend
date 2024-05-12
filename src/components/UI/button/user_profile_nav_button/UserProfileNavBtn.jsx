@@ -4,7 +4,7 @@ import classes from './UserProfileNavBtn.module.css'
 const UserProfileNavBtn = ({selectedButton, setButton, btnNumber, isActive, children, ...props }) => {
 
     const classSetter = () => {
-        if (selectedButton == btnNumber) {
+        if (selectedButton === btnNumber) {
             return ([classes.profile_nav_button, classes.active].join(' '))
         } else {
             return classes.profile_nav_button

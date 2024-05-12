@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import classes from './RegistrationInput.module.css'
+import React from 'react';
+import classes from './RegistrationInput.module.css';
 
 const RegInput = ({ value, onBlur, onChange, handler, errorMsg, state, setState, labelLink, ...props }) => {
 
     const inputValidation = () => {
-        if (value.length == 0) {
+        if (value.length === 0) {
             return classes.form_place
         }
 
-        if (errorMsg != '') {
+        if (errorMsg !== '') {
             return ([classes.form_place, classes.form_place_invalid].join(' '))
 
         } else {
@@ -27,7 +27,7 @@ const RegInput = ({ value, onBlur, onChange, handler, errorMsg, state, setState,
                 required autoComplete="off"></input>
             <label htmlFor={labelLink} className={classes.div_label}>{props.label}</label>
             <span className={
-                (errorMsg != '') ? ([classes.error, classes.error_active].join(' ')) : classes.error
+                (errorMsg !== '') ? ([classes.error, classes.error_active].join(' ')) : classes.error
             } aria-live="polite">
                 {errorMsg}
             </span>

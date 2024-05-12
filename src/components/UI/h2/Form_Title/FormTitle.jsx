@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import classes from './FormTitle.module.css'
+import React from 'react';
+import classes from './FormTitle.module.css';
 
-const FormTitle = ({ styles, arrayWord, ...props }) => {
+const FormTitle = ({ styles, arrayWord }) => {
     return (
         <h2 style={styles} className={classes.loader}>
             <div>

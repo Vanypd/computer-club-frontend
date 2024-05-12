@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import classes from './SubmitCheckbox.module.css'
+import classes from './SubmitCheckbox.module.css';
 
 const SubmitCheckbox = ({ label, isChecked, setIsChecked }) => {
 

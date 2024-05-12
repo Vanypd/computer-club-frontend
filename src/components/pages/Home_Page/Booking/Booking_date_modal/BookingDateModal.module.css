@@ -1,0 +1,72 @@
+.container {
+	--height: 100%;
+	--width: 700px;
+
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: calc(50% - (var(--width) / 2));
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: auto;
+	margin-bottom: 150px;
+
+	height: var(--height);
+	width: var(--width);
+	padding: 70px 50px;
+	background-color: rgba(0, 0, 0, .5);
+	backdrop-filter: blur(10px);
+	border-radius: 10px;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	transform: translateX(-300px);
+	transition: all 1s ease-in-out;
+
+	pointer-events: none;
+	z-index: -100;
+}
+
+.container_active {
+	transform: translateX(0);
+	opacity: 1;
+
+	pointer-events: all;
+	z-index: 3;
+}
+
+.booking_form {
+	display: flex;
+	position: relative;
+	margin: 0 auto;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: all 0.5s ease-in-out;
+}
+
+.container_top {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container_mid {
+	position: relative;
+	display: flex;
+}
+
+.container_bot {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.booking_message {
+	width: auto;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	text-align: center;
+	color: var(--error-text-message);
+	background-color: rgba(0, 0, 0, .5);
+}

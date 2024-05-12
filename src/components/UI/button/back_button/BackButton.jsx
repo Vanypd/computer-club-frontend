@@ -12,7 +12,7 @@ const BackButton = () => {
 
     return (
         <div className={classes.back_btn}>
-            <a onClick={toMainPage} className={classes.back_btn_link}>Назад</a>
+            <a href="/#" onClick={toMainPage} className={classes.back_btn_link}>Назад</a>
         </div>
     )
 }

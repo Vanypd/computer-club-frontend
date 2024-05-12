@@ -1,0 +1,133 @@
+.box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    padding: 30px 100px;
+
+    border: 3px solid var(--places-map-color);
+    border-radius: 10px;
+}
+
+.walls_svg {
+    position: absolute;
+    fill: var(--page-theme-color);
+    border: 3px solid var(var(--places-map-color));
+    display: flex;
+}
+
+.walls_path {
+    fill: var(--places-map-color);
+}
+
+.room {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.room_dynamic_1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    fill: var(--places-map-color);
+}
+
+.room_dynamic_2 {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    transform: rotate(90deg);
+    fill: var(--places-map-color);
+}
+
+.places_div_1 {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 129px;
+}
+
+.places_div_2 {
+    position: absolute;
+    top: 3px;
+    left: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 129px;
+}
+
+.places_div_3 {
+    position: absolute;
+    top: 167px;
+    left: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 129px;
+}
+
+.places_div_4 {
+    position: absolute;
+    top: 167px;
+    left: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 129px;
+}
+
+.PS_div_1 {
+    position: absolute;
+    top: 25px;
+    left: 155px;
+}
+
+.PS_div_2 {
+    position: absolute;
+    bottom: 25px;
+    left: 155px;
+}
+
+.room_TV_1 {
+    position: absolute;
+    top: 3px;
+    left: 148px;
+}
+
+.room_TV_2 {
+    position: absolute;
+    bottom: 3px;
+    left: 148px;
+    transform: rotate(180deg);
+}
+
+.plant_1 {
+    position: absolute;
+    top: 102px;
+    left: 134px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/src/img/plant.png);
+}
+
+.plant_2 {
+    position: absolute;
+    bottom: 102px;
+    left: 134px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/src/img/plant.png);
+}
+

@@ -13,11 +13,11 @@ const RoomSelector = ({ selectedRoom, setSelectedRoom }) => {
 
     const selectOption = (option) => {
         setRoomLable(option)
-        if (option == 'DEFAULT')
+        if (option === 'DEFAULT')
             setSelectedRoom(0)
-        if (option == 'VIP')
+        if (option === 'VIP')
             setSelectedRoom(1)
-        if (option == 'OLD STYLE')
+        if (option === 'OLD STYLE')
             setSelectedRoom(2)
 
         setActive(false)

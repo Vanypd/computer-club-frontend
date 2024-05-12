@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
 import BoxCellButton from "../../button/box_cell_button/BoxCellButton";
-import classes from './BookingSelector.module.css'
+import classes from './BookingSelector.module.css';
 
 const BookingSelector = ({dayList, isDisabled, selectedCell, setSelectedCell, ...props}) => {
 

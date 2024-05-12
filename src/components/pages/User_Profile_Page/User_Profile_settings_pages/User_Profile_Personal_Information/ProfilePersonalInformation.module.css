@@ -1,0 +1,121 @@
+.profile_nav_pages {
+	display: block;
+	flex-basis: 100%;
+	padding: 0 50px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	animation: pageActive 1s ease-in-out;
+}
+
+@keyframes pageActive {
+	0% {
+		opacity: 0;
+		transform: scale(80%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(100%);
+	}
+}
+
+.user_info {
+	display: flex;
+	flex-basis: 100%;
+	flex-direction: column;
+}
+
+.id_block {
+	display: flex;
+	position: relative;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.user_info_id {
+	padding: 0 30px;
+	background-color: rgba(0, 0, 0, .5);
+	border-radius: 10px;
+}
+
+.user_info_id_text {
+	display: inline-block;
+	margin-right: 20px;
+	height: 40px;
+
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: var(--first-details-color);
+}
+
+.user_info_id_value {
+	display: inline-block;
+	height: 40px;
+
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+.name_block {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.email_block {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.phone_block {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.password_block {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 200px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.user_info_span {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+
+	font-size: 20px;
+	color: var(--first-details-color);
+
+}

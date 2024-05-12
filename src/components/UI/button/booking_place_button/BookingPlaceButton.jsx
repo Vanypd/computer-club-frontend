@@ -9,7 +9,7 @@ const BookingPlaceButton = ({ isPS, textSide, svgSide, booked, selectedPlace, se
             case 'isPS':
                 if (booked) {
                     return [classes.box_PS_button, classes.booked].join(' ')
-                } else if (selectedPlace == children) {
+                } else if (selectedPlace === children) {
                     return [classes.box_PS_button, classes.box_PS_button_active].join(' ')
                 } else {
                     return classes.box_PS_button
@@ -18,7 +18,7 @@ const BookingPlaceButton = ({ isPS, textSide, svgSide, booked, selectedPlace, se
             case 'notPS':
                 if (booked) {
                     return [classes.box_place_button, classes.booked].join(' ')
-                } else if (selectedPlace == children) {
+                } else if (selectedPlace === children) {
                     return [classes.box_place_button, classes.box_place_button_active].join(' ')
                 } else {
                     return classes.box_place_button
@@ -48,7 +48,7 @@ const BookingPlaceButton = ({ isPS, textSide, svgSide, booked, selectedPlace, se
                 default: return classes.btn_text_bottom
             }
 
-
+            default: return;
         }
     }
 
@@ -56,7 +56,7 @@ const BookingPlaceButton = ({ isPS, textSide, svgSide, booked, selectedPlace, se
         setSelectedPlace(children)
     }
 
-    return ((isPS == true)
+    return ((isPS === true)
 
         ? < div className={classes.place_box} >
             <svg className={ClassSelector('svgPSSide')} width="120" height="50" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">

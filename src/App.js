@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Header from './components/PagesParts/Header/Header';
-import Footer from './components/PagesParts/Footer/Footer'
-import HomePage from './components/PagesParts/Main/Main_Pages/Home_Page/HomePage';
+import Header from 'components/Header/Header';
+import HomePage from 'components/pages/Home_Page/HomePage';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import AutorisationPage from './components/PagesParts/Main/Main_Pages/Authorisation_Page/AuthorisationPage';
-import RegistrationPage from './components/PagesParts/Main/Main_Pages/Registration_Page/RegistrarionPage';
-import UserProfile from './components/PagesParts/Main/Main_Pages/User_Profile_Page/UserProfile';
-import Users from './users';
-import { CookieManager } from './MAIN';
-import ErrorPage from './components/PagesParts/Main/Main_Pages/Error_Page/ErrorPage';
+import AutorisationPage from 'components/pages/Authorisation_Page/AuthorisationPage';
+import RegistrationPage from 'components/pages/Registration_Page/RegistrarionPage';
+import UserProfile from 'components/pages/User_Profile_Page/UserProfile';
+import Users from 'src/users';
+import { CookieManager } from 'src/MAIN';
+import ErrorPage from 'components/pages/Error_Page/ErrorPage';
 
 function App() {
   const [isLogged, setLogged] = useState(false)
@@ -32,7 +31,7 @@ function App() {
     if (CookieManager.getCookie('userid')) {
       setLogged(true)
     }
-  }, [CookieManager.getCookie('userid')])
+  }, [])
 
   return (
     <div className="App">

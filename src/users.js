@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import UsersPage from "./components/PagesParts/Main/Main_Pages/Users_Page/UsersPage";
-// import { TEST_URL } from './MAIN.js';
+import UsersPage from "pages/Users_Page/UsersPage.jsx";
 import { GET_USERS_URL } from './MAIN.js';
 import { DELETE_USERS_URL } from './MAIN.js';
 

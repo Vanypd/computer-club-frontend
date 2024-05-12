@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const useValidation = (value, validations, isDirty) => {
@@ -19,7 +19,7 @@ const useValidation = (value, validations, isDirty) => {
 
     const fieldsErrorsResolver = async (specialField) => {
         switch (true) {
-            case (value.length == 0):
+            case (value.length === 0):
                 setErrorMessage(`Поле не может быть пустым`)
                 setNoErrors(false)
                 break
@@ -34,12 +34,12 @@ const useValidation = (value, validations, isDirty) => {
                 setNoErrors(false)
                 break
 
-            case (specialField == 'Email' && regMail.test(value) == false):
+            case (specialField === 'Email' && regMail.test(value) === false):
                 setErrorMessage(`Неверный формат E-mail`)
                 setNoErrors(false)
                 break
 
-            case (specialField == 'Number' && regNumber.test(value) == false):
+            case (specialField === 'Number' && regNumber.test(value) === false):
                 setErrorMessage(`Номер должен состоять только из чисел`)
                 setNoErrors(false)
                 break
@@ -60,6 +60,8 @@ const useValidation = (value, validations, isDirty) => {
                 case 'maxLength':
                     setMaxLength(validations[validation])
                     break;
+
+                default: return;
             }
         }
 
@@ -95,6 +97,8 @@ const useValidation = (value, validations, isDirty) => {
                     case 'isNumber':
                         value ? specialField = 'Number' : specialField = ''
                         break;
+
+                    default: return;
                 }
                 await fieldsErrorsResolver(specialField)
 

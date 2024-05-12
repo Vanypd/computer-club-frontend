@@ -1,4 +1,5 @@
 // ENDPOINTS //
+
 export const MAIN_URL = 'http://safg13.ddns.net:8080';
 export const TEST_URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -13,10 +14,8 @@ export const POST_USERS_URL = MAIN_URL + '/user/add';
 // BOOKING //
 
 export const POST_BOOKING_ORDER_URL = MAIN_URL + '/order/add-order'
-
 export const GET_BOOKING_PLACES_URL = MAIN_URL + '/order/orderslistbydate/'
 export const GET_BOOKING_ORDER_URL = MAIN_URL + '/order/orderslistbydate/'
-
 export const GET_ORDERSLIST_BY_USER = MAIN_URL + '/order/orderslistbyuserid/'
 
 // AUTH //
@@ -25,13 +24,9 @@ export const POST_AUTH_URL = MAIN_URL + '/user/auth';
 
 // COOCKIES //
 
-
 export const CookieManager = {
     getCookie: function (name) {
-        let matches = document.cookie.match(new RegExp(
-            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-        ));
-
+        let matches = document.cookie.match(new RegExp(`${name}=([^;]*)`));
         return matches ? decodeURIComponent(matches[1]) : ''; 
     },
 
@@ -47,20 +42,6 @@ export const CookieManager = {
         document.cookie = `token=deleted; max-age=0`
     },
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////

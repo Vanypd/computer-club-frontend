@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import classes from './MainStyleBtn.module.css'
+import classes from './MainStyleBtn.module.css';
 
 const MainStyleBtn = ({isDisabled, classType, styles, children, ...props }) => {
     
