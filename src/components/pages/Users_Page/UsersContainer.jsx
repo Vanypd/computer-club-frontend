@@ -1,10 +1,10 @@
-import APIService from "@API/APIService";
-import UsersPage from "pages/Users_Page/UsersPage.jsx";
+import UsersPage from "@pages/Users_Page/UsersPage.jsx";
+import APIService from "@src/API/APIService";
 import { useEffect, useState } from "react";
 
 function UsersContainer() {
     const [error, setError] = useState('');
-    const [isLoaded, setLoaded] = useState(false);
+    // const [isLoaded, setLoaded] = useState(false);
 
     const [userItems, setUserItems] = useState([]);
     const [isEditorWindowActive, setEditorWindowActive] = useState(false);
@@ -33,12 +33,12 @@ function UsersContainer() {
         APIService.users.getUsers()
         .then((result) => setUserItems(result.data))
         .catch((error) => setError(error))
-        .finally(() => setLoaded(true))
+        // .finally(() => setLoaded(true))
     };
     
     useEffect(() => {
         setError('');
-        setLoaded('');
+        // setLoaded('');
         GetUsers();
     }, [error]);
 

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useInput from 'hooks/useInput';
-import { POST_USERS_URL } from 'src/MAIN';
-import BackButton from 'UI/button/back_button/BackButton';
-import MainStyleBtn from 'UI/button/main_style_button/MainStyleBtn';
-import SubmitCheckbox from 'UI/checkbox/Submit_checkbox/SubmitCheckbox';
-import FormTitle from 'UI/h2/form_title/FormTitle';
-import RegInput from 'UI/input/Registration_input/RegistrationInput';
+import BackButton from '@UI/button/back_button/BackButton';
+import MainStyleBtn from '@UI/button/main_style_button/MainStyleBtn';
+import SubmitCheckbox from '@UI/checkbox/Submit_checkbox/SubmitCheckbox';
+import FormTitle from '@UI/h2/form_title/FormTitle';
+import RegInput from '@UI/input/Registration_input/RegistrationInput';
 import classes from './RegistrationPage.module.css';
+import APIService from '@src/API/APIService';
 
 const RegistrationPage = () => {
 
@@ -45,18 +45,11 @@ const RegistrationPage = () => {
                 roleId: 3
             }
 
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(user)
-            }
-
-            fetch(POST_USERS_URL, requestOptions)
+            APIService.users.addUser(user)
                 .then(function (response) {
 
                     if (response.ok) {
                         setFormErrorMsg('')
-
                         navigate('/')
                     }
 

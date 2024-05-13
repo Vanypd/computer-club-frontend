@@ -1,5 +1,5 @@
 import React from 'react'
-import BackButton from 'UI/button/back_button/BackButton'
+import BackButton from '@UI/button/back_button/BackButton'
 import cl from './ErrorPage.module.css'
 
 const ErrorPage = () => {

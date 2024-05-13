@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import MainStyleBtn from '@UI/button/main_style_button/MainStyleBtn'
+import APIService from '@src/API/APIService'
+import CookieManager from '@src/cookie/CookieManager'
+import { useEffect, useState } from 'react'
 import classes from './BookingPlaceModal.module.css'
 import BookingPlaceSelector from './Booking_place_selector/BookingPlaceSelector'
-import MainStyleBtn from 'UI/button/main_style_button/MainStyleBtn'
-import { CookieManager, GET_BOOKING_PLACES_URL, POST_BOOKING_ORDER_URL } from 'src/MAIN'
 
 const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedPlace, setSelectedPlace, isDateChosen, setDateChosen, isBookFinished, setBookIsFinished }) => {
 
@@ -15,28 +16,28 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
     useEffect(() => {
 
         const getPlacesList = () => {
-            const date = selectedDate + 'T' + selectedCell + ':00'
+            // const date = selectedDate + 'T' + selectedCell + ':00'
 
-            fetch(GET_BOOKING_PLACES_URL + selectedDate + '/' + selectedRoom + '/' + date)
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        console.log(result)
-                        const array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            // ТУТ ПЕРЕДЕЛАТЬ ЛОГИКУ!!!
+            // БЫЛО: fetch(GET_BOOKING_PLACES_URL + selectedDate + '/' + selectedRoom + '/' + date)
 
-                        for (let i = 0; i < result.length; i++) {
-                            let elementOf = result[i];
-                            const pcId = elementOf.pcId
+            APIService.booking.getPlaces(selectedDate, selectedRoom)
+                .then((result) => {
+                    console.log(result)
+                    const array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-                            array[pcId - 1] = 1
-                        }
+                    for (let i = 0; i < result.length; i++) {
+                        let elementOf = result[i];
+                        const pcId = elementOf.pcId
 
-                        setDayPlacesList(array)
-                    },
-                    (error) => {
-                        console.log(error)
+                        array[pcId - 1] = 1
                     }
-                )
+
+                    setDayPlacesList(array)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
         }
 
         if (selectedRoom !== 'none' &&
@@ -51,12 +52,12 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
     const book = () => {
         setButtonDisabler(true)
         let selectedPC = selectedPlace
-        if (selectedPlace === '1PS') {selectedPC = 17}
-        if (selectedPlace === '2PS') {selectedPC = 18}
+        if (selectedPlace === '1PS') { selectedPC = 17 }
+        if (selectedPlace === '2PS') { selectedPC = 18 }
 
         const appointmentFullDate = selectedDate + 'T' + selectedCell + ':00'
 
-        const userArray = {
+        const newOrderData = {
             id: 0,
             appointmentFullDate: appointmentFullDate,
             appointmentDay: selectedDate,
@@ -74,42 +75,29 @@ const BookingPlaceModal = ({ selectedRoom, selectedDate, selectedCell, selectedP
             }
         }
 
-        const requestOptions = {
-            method: 'POST',
-            headers: {
-                'Authorization': 'Bearer ' + CookieManager.getCookie('token'),
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userArray)
-        }
+        APIService.booking.postOrder(newOrderData)
+            .then((result) => {
 
-        fetch(POST_BOOKING_ORDER_URL, requestOptions)
-            .then(function (response) {
-
-                if (response.ok) {
-                    setBookIsFinished(true)
-                }
-
-                return response.json();
-            })
-            .then(function (data) {
-
-                let responseCode = data.error;
-                let responseStatus = data.status
-
-                if (responseStatus === 500) {
+                if (result.status === 500) {
                     setBookingMessage('Что-то пошло не так STATUS:500')
-                    console.log(data)
-                } else {
-                    if (responseCode === 'Unauthorized') {
-                        setBookingMessage('Авторизуйтесь чтобы продолжить')
-                    }
-                    setBookingMessage('Что-то пошло не так...')
+                    return;
                 }
+
+                if (result.data.error && result.data.error === 'Unauthorized') {
+                    setBookingMessage('Авторизуйтесь чтобы продолжить')
+                    return;
+                }
+
+                if (result.status !== 200) {
+                    setBookingMessage('Что-то пошло не так...')
+                    return;
+                }
+
+                setBookIsFinished(true)
+                return result.data;
             })
             .catch(function (error) {
-                console.log('error ', error);
-
+                console.log('error: ', error);
             })
     }
 

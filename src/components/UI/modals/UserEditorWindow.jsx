@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './UserEditorWindow.module.css'
 import MainStyleBtn from '../button/main_style_button/MainStyleBtn'
-import APIService from 'src/API/APIService'
+import APIService from '@src/API/APIService'
 
 const UserEditorWindow = ({ currentItemParameters, active, setActive, currentItem, GetUsers }) => {
 

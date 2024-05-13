@@ -1,12 +1,12 @@
-import BackButton from "UI/button/back_button/BackButton";
-import MainStyleBtn from "UI/button/main_style_button/MainStyleBtn";
-import FormTitle from "UI/h2/form_title/FormTitle";
-import RegInput from "UI/input/Registration_input/RegistrationInput";
-import useInput from "hooks/useInput";
+import BackButton from "@UI/button/back_button/BackButton";
+import MainStyleBtn from "@UI/button/main_style_button/MainStyleBtn";
+import FormTitle from "@UI/h2/form_title/FormTitle";
+import RegInput from "@UI/input/Registration_input/RegistrationInput";
+import useInput from "@hooks/useInput";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import APIService from "src/API/APIService";
-import CookieManager from "src/cookie/CookieManager";
+import APIService from "@src/API/APIService";
+import CookieManager from "@src/cookie/CookieManager";
 import classes from './AuthorisationPage.module.css';
 
 const AutorisationPage = ({ setLogged }) => {

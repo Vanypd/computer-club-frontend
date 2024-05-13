@@ -1,36 +1,15 @@
 import { useCallback, useEffect, useState } from 'react'
-import { CookieManager, GET_ORDERSLIST_BY_USER } from 'src/MAIN'
-import SortSelector from 'UI/selector/Sort_selector/SortSelector'
+import SortSelector from '@UI/selector/Sort_selector/SortSelector'
 import OrdersHistoryItem from './Orders_history_item/OrdersHistoryItem'
 import classes from './ProfileOrdersHistory.module.css'
+import CookieManager from '@src/cookie/CookieManager'
+import APIService from '@src/API/APIService'
 
-const ProfileOrdersHistory = ({ user }) => {
+const ProfileOrdersHistory = () => {
 
     const [sortValue, setSortValue] = useState('по дате')
     const [ordersHistoryItems, setOrdersHistoryItems] = useState([])
     const [sortedItems, setSortedItems] = useState([])
-
-    const testItems = [
-        {
-            id: 228,
-            appointmentFullDate: '2023-05-08T05:00:00',
-            roomId: 0,
-            pcId: 12,
-        },
-        {
-            id: 1337,
-            appointmentFullDate: '2023-05-09T22:00:00',
-            roomId: 0,
-            pcId: 17,
-        },
-        {
-            id: 1488,
-            appointmentFullDate: '2023-05-09T12:00:00',
-            roomId: 0,
-            pcId: 3,
-        },
-    ]
-
 
     const sortOrdersHistory = useCallback((sort) => {
         setSortValue(sort)
@@ -56,16 +35,13 @@ const ProfileOrdersHistory = ({ user }) => {
 
 
     useEffect(() => {
-        fetch(GET_ORDERSLIST_BY_USER + CookieManager.getCookie('userid'))
-            .then(response => response.json())
-            .then(
-                (result) => {
-                    setOrdersHistoryItems(result);
-                },
-                (error) => {
-                    console.log('error: ' + error)
-                }
-            )
+        APIService.booking.getUserOrderlist(CookieManager.getCookie('userid'))
+            .then((result) => {
+                setOrdersHistoryItems(result);
+            })
+            .catch((error) => {
+                console.log('error: ' + error)
+            })
     }, [])
 
 
@@ -75,7 +51,7 @@ const ProfileOrdersHistory = ({ user }) => {
         }
     }, [ordersHistoryItems, sortOrdersHistory])
 
-    
+
     return (
         <div className={classes.profile_nav_pages}>
             <div className={classes.order_history_sort_menu}>

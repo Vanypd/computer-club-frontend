@@ -1,7 +1,7 @@
 import React from 'react'
 import CreateUsersItems from './CreateUsersItems';
-import UserEditorWindow from 'UI/modals/UserEditorWindow';
-import BackButton from 'UI/button/back_button/BackButton';
+import UserEditorWindow from '@UI/modals/UserEditorWindow';
+import BackButton from '@UI/button/back_button/BackButton';
 import classes from './UsersPage.module.css'
 
 const CreateUsersPage = (props) => {

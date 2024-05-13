@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './ProfilePersonalInformation.module.css'
-import UserProfileInput from 'UI/input/User_Profile_input/UserProfileInput';
+import UserProfileInput from '@UI/input/User_Profile_input/UserProfileInput';
 
 const ProfilePersonalInformation = ({user, ...props}) => {
     return (

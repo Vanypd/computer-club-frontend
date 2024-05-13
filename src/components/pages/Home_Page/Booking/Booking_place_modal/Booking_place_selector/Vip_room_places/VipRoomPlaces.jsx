@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './VipRoomPlaces.module.css'
-import BookingPlaceButton from 'UI/button/booking_place_button/BookingPlaceButton'
+import BookingPlaceButton from '@UI/button/booking_place_button/BookingPlaceButton'
 
 const VipRoomPlaces = ({ dayPlacesList, selectedPlace, setSelectedPlace }) => {
     return (

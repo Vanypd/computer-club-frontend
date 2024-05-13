@@ -1,5 +1,5 @@
 import React from "react";
-import MainStyleBtn from "UI/button/main_style_button/MainStyleBtn";
+import MainStyleBtn from "@UI/button/main_style_button/MainStyleBtn";
 
 const CreateUsersItems = (props) => {
 

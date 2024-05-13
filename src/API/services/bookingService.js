@@ -1,25 +1,31 @@
 import axios from "axios";
 import APIMethods from "../constants/APIMethods";
+import CookieManager from "@src/cookie/CookieManager";
 
 const bookingService = {
-    getOrder: async function(date) {
+    getOrder: async function (date) {
         let method = APIMethods.booking.getOrder;
         return axios.get(method, date);
     },
 
-    postOrder: async function(data) {
+    postOrder: async function (data) {
         let method = APIMethods.booking.postOrder;
-        return axios.post(method, data);
+        let config = {
+            headers: {
+                'Authorization': 'Bearer ' + CookieManager.getCookie('token')
+            }
+        }
+        return axios.post(method, data, config);
     },
 
-    getPlaces: async function() {
+    getPlaces: async function () {
         let method = APIMethods.booking.getPlaces;
         return axios.get(method);
     },
 
-    getUserOrderlist: async function() {
+    getUserOrderlist: async function (userId) {
         let method = APIMethods.booking.getUserOrderlist;
-        return axios.get(method);
+        return axios.get(method, userId);
     }
 };
 

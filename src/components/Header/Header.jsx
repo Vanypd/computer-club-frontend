@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import MainStyleBtn from 'UI/button/main_style_button/MainStyleBtn';
+import MainStyleBtn from '@UI/button/main_style_button/MainStyleBtn';
 import classes from './Header.module.css';
 import HeaderLogo from './Header_Logo/HeaderLogo';
 

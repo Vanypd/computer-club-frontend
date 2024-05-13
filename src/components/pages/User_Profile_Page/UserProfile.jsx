@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import BackButton from 'UI/button/back_button/BackButton';
+import BackButton from '@UI/button/back_button/BackButton';
 import classes from './UserProfile.module.css'
-import UserProfileNavBtn from 'UI/button/user_profile_nav_button/UserProfileNavBtn';
+import UserProfileNavBtn from '@UI/button/user_profile_nav_button/UserProfileNavBtn';
 import ProfilePersonalInformation from './User_Profile_settings_pages/User_Profile_Personal_Information/ProfilePersonalInformation';
-import { CookieManager, GET_USER_URL } from 'src/MAIN';
 import ProfileLogout from './User_Profile_settings_pages/User_Profile_Logout/ProfileLogout';
 import { useNavigate } from 'react-router-dom';
-import MainStyleBtn from 'UI/button/main_style_button/MainStyleBtn';
+import MainStyleBtn from '@UI/button/main_style_button/MainStyleBtn';
 import ProfileOrdersHistory from './User_Profile_settings_pages/User_Profile_Orders_History/ProfileOrdersHistory';
+import APIService from '@src/API/APIService';
+import CookieManager from '@src/cookie/CookieManager';
 
 
-const UserProfile = ({ isLogged, setLogged }) => {
+const UserProfile = ({ setLogged }) => {
     const navigate = useNavigate()
     const [selectedButton, setSelectedButton] = useState('1')
     const [authorizedUser, setAuthorizedUser] = useState({})
 
     const getUserInformation = () => {
-
-        fetch(GET_USER_URL + CookieManager.getCookie('userid'))
-            .then(response => response.json())
-            .then(
-                (user) => {
+        APIService.users.getUser(CookieManager.getCookie('userid'))
+            .then((user) => {
 
                     let currentUser = {
                         id: user.id,
@@ -31,11 +29,10 @@ const UserProfile = ({ isLogged, setLogged }) => {
                     }
 
                     setAuthorizedUser(currentUser)
-                },
-                (error) => {
+                })
+                .catch((error) => {
                     console.log(error)
-                }
-            )
+                })
     }
     useEffect((getUserInformation), [selectedButton]);
 
