@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './UserEditorWindow.module.css'
-import { PUT_USERS_URL } from '../../../MAIN'
 import MainStyleBtn from '../button/main_style_button/MainStyleBtn'
+import APIService from 'src/API/APIService'
 
 const UserEditorWindow = ({ currentItemParameters, active, setActive, currentItem, GetUsers }) => {
 
@@ -15,19 +15,10 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
             password: currentItemParameters.password
         }
 
-        const requestOptions = {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(user)
-        }
-
         if (JSON.stringify(currentItem) !== JSON.stringify(user)) {
-            console.log('не равны');
-
-            await fetch(PUT_USERS_URL + currentItem.id, requestOptions);
+            APIService.users.putUser(currentItem.id, user)
             GetUsers();
             setActive(false);
-
         } else {
             console.log('равны');
             setActive(false);
@@ -41,7 +32,7 @@ const UserEditorWindow = ({ currentItemParameters, active, setActive, currentIte
             <div className={
                 active ? ([classes.editor_window_content, classes.editor_window_content_active].join(' ')) : (classes.editor_window_content)
             }>
-                <a className="editor_window_close" tabIndex="1" onClick={() => setActive(false)}>
+                <a href="/#" className="editor_window_close" tabIndex="1" onClick={() => setActive(false)}>
                     <svg width="25px" height="25px" viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg">
                         <path

@@ -1,12 +1,12 @@
-import { GET_BOOKING_ORDER_URL } from "src/MAIN";
-import MainStyleBtn from "UI/button/main_style_button/MainStyleBtn";
-import BookingCalendar from "UI/calendar/booking_calendar/BookingCalendar";
-import BookingSelector from "UI/selector/Booking_selector/BookingSelector";
-import RoomSelector from "UI/selector/Room_selector/RoomSelector";
+import MainStyleBtn from "@UI/button/main_style_button/MainStyleBtn";
+import BookingCalendar from "@UI/calendar/booking_calendar/BookingCalendar";
+import BookingSelector from "@UI/selector/Booking_selector/BookingSelector";
+import RoomSelector from "@UI/selector/Room_selector/RoomSelector";
 import { useEffect, useRef, useState } from "react";
 import classes from './BookingDateModal.module.css';
+import APIService from "@src/API/APIService";
 
-const BookingDateModal = ({selectedRoom, setSelectedRoom, selectedCell, setSelectedCell, selectedDate, setSelectedDate, dateChosen: isDateChosen, setDateChosen, scrollPos }) => {
+const BookingDateModal = ({ selectedRoom, setSelectedRoom, selectedCell, setSelectedCell, selectedDate, setSelectedDate, dateChosen: isDateChosen, setDateChosen, scrollPos }) => {
 
     const [dayList, setDayList] = useState([])
     const bookingDateRef = useRef(null);
@@ -17,32 +17,29 @@ const BookingDateModal = ({selectedRoom, setSelectedRoom, selectedCell, setSelec
     const [isButtonDisabled, setButtonDisabled] = useState(true);
     const [bookingMessage, setBookingMessage] = useState('');
 
-
     useEffect(() => {
+
         const getDayList = () => {
-            fetch(GET_BOOKING_ORDER_URL + selectedDate)
-                .then(response => response.json())
-                .then(
-                    (result) => {
-                        const array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            APIService.booking.getOrder(selectedDate)
+                .then((result) => {
+                    const array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
-                        for (let i = 0; i < result.length; i++) {
-                            let elementOf = result[i];
-                            console.log(result)
+                    for (let i = 0; i < result.length; i++) {
+                        let elementOf = result[i];
+                        console.log(result)
     
-                            let fullDate = elementOf.appointmentFullDate
-                            let date = new Date(fullDate)
-                            let cell = date.getHours()
-                            array[cell] = 1;
-                        }
-    
-                        setDayList(array)
-                    },
-                    (error) => {
-                        console.log(error)
-                        setBookingMessage(error)
+                        let fullDate = elementOf.appointmentFullDate
+                        let date = new Date(fullDate)
+                        let cell = date.getHours()
+                        array[cell] = 1;
                     }
-                )
+    
+                    setDayList(array)
+                })
+                .catch((error) => {
+                    console.log(error)
+                    setBookingMessage(error)
+                })
         }
 
         if (selectedRoom !== 'none') {
@@ -67,11 +64,9 @@ const BookingDateModal = ({selectedRoom, setSelectedRoom, selectedCell, setSelec
             bookingDateRef.classList.remove(classes.container_active)
         }
 
-        setTimeout(() => {
-            if (isDateModalActive && !isDateChosen) {
-                bookingDateRef.classList.add(classes.container_active)
-            }
-        }, 700)
+        if (isDateModalActive && !isDateChosen) {
+            bookingDateRef.classList.add(classes.container_active)
+        }
 
     }, [isDateChosen, isDateModalActive])
 
@@ -79,16 +74,20 @@ const BookingDateModal = ({selectedRoom, setSelectedRoom, selectedCell, setSelec
     const activeBookingChecker = () => {
         let bookingScrollPosition = 1650;
 
-        if (isDateModalActive === false) {
-            if (scrollPos > bookingScrollPosition) {
-                if (bookingDateRef.classList.contains(classes.container_active)) {
-                    return
-                } else {
-                    bookingDateRef.classList.add(classes.container_active)
-                    setDateModalActive(true)
-                }
-            }
+        if (isDateModalActive) {
+            return;
         }
+
+        if (scrollPos < bookingScrollPosition) {
+            return;
+        }
+
+        if (bookingDateRef.classList.contains(classes.container_active)) {
+            return;
+        }
+
+        bookingDateRef.classList.add(classes.container_active)
+        setDateModalActive(true)
     }
 
 

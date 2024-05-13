@@ -1,22 +1,21 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import APIService from "@API/APIService";
 import UsersPage from "pages/Users_Page/UsersPage.jsx";
-import { GET_USERS_URL } from './MAIN.js';
-import { DELETE_USERS_URL } from './MAIN.js';
+import { useEffect, useState } from "react";
 
-function Users() {
-    const [errors, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+function UsersContainer() {
+    const [error, setError] = useState('');
+    const [isLoaded, setLoaded] = useState(false);
 
-    const [userItems, setUserItems] = useState([])
-    const [editorWindowActive, setEditorWindowActive] = useState(false)
-    const [currentItem, setCurrentItem] = useState({})
+    const [userItems, setUserItems] = useState([]);
+    const [isEditorWindowActive, setEditorWindowActive] = useState(false);
+    const [currentItem, setCurrentItem] = useState({});
 
     const [id, setId] = useState(0);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
+    
     const currentItemParameters = {
         id: id,
         name: name,
@@ -31,30 +30,20 @@ function Users() {
     };
 
     const GetUsers = () => {
-
-        fetch(GET_USERS_URL)
-            .then(response => response.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setUserItems(result);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                    console.log(errors);
-                    console.log(isLoaded);
-                }
-            )
-
+        APIService.users.getUsers()
+        .then((result) => setUserItems(result.data))
+        .catch((error) => setError(error))
+        .finally(() => setLoaded(true))
     };
-    useEffect((GetUsers), []);
+    
+    useEffect(() => {
+        setError('');
+        setLoaded('');
+        GetUsers();
+    }, [error]);
 
     const deleteUser = (item) => {
-        fetch((DELETE_USERS_URL + item.id), {
-            method: 'DELETE'
-        });
-
+        APIService.users.deleteUser(item.id)
         setUserItems(userItems.filter(i => i.id !== item.id))
     };
 
@@ -68,7 +57,7 @@ function Users() {
             editUser={editUser}
             deleteUser={deleteUser}
             userItems={userItems}
-            editorWindowActive={editorWindowActive}
+            editorWindowActive={isEditorWindowActive}
             setEditorWindowActive={setEditorWindowActive}
             currentItem={currentItem}
             GetUsers={GetUsers}
@@ -77,4 +66,4 @@ function Users() {
     );
 };
 
-export default Users;
+export default UsersContainer;

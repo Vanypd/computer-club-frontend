@@ -14,43 +14,15 @@ const useValidation = (value, validations, isDirty) => {
 
     const [noErrors, setNoErrors] = useState(false)
 
-    const regMail = /^\w+@\w+\.\w+$/;
-    const regNumber = /^\d+$/;
+    
 
-    const fieldsErrorsResolver = async (specialField) => {
-        switch (true) {
-            case (value.length === 0):
-                setErrorMessage(`Поле не может быть пустым`)
-                setNoErrors(false)
-                break
-
-            case (value.length < minLength):
-                setErrorMessage(`В этом поле не должно быть меньше ${minLength} символов`)
-                setNoErrors(false)
-                break
-
-            case (value.length > maxLength):
-                setErrorMessage(`В этом поле не должно быть больше ${maxLength} символов`)
-                setNoErrors(false)
-                break
-
-            case (specialField === 'Email' && regMail.test(value) === false):
-                setErrorMessage(`Неверный формат E-mail`)
-                setNoErrors(false)
-                break
-
-            case (specialField === 'Number' && regNumber.test(value) === false):
-                setErrorMessage(`Номер должен состоять только из чисел`)
-                setNoErrors(false)
-                break
-
-            default:
-                setErrorMessage('')
-                setNoErrors(true)
-        }
-    }
+    
 
     useEffect(() => {
+        const regMail = /^\w+@\w+\.\w+$/;
+        const regNumber = /^\d+$/;
+
+
         for (const validation in validations) {
             switch (validation) {
                 case 'minLength':
@@ -62,6 +34,39 @@ const useValidation = (value, validations, isDirty) => {
                     break;
 
                 default: return;
+            }
+        }
+
+        const fieldsErrorsResolver = async (specialField) => {
+            switch (true) {
+                case (value.length === 0):
+                    setErrorMessage(`Поле не может быть пустым`)
+                    setNoErrors(false)
+                    break
+    
+                case (value.length < minLength):
+                    setErrorMessage(`В этом поле не должно быть меньше ${minLength} символов`)
+                    setNoErrors(false)
+                    break
+    
+                case (value.length > maxLength):
+                    setErrorMessage(`В этом поле не должно быть больше ${maxLength} символов`)
+                    setNoErrors(false)
+                    break
+    
+                case (specialField === 'Email' && regMail.test(value) === false):
+                    setErrorMessage(`Неверный формат E-mail`)
+                    setNoErrors(false)
+                    break
+    
+                case (specialField === 'Number' && regNumber.test(value) === false):
+                    setErrorMessage(`Номер должен состоять только из чисел`)
+                    setNoErrors(false)
+                    break
+    
+                default:
+                    setErrorMessage('')
+                    setNoErrors(true)
             }
         }
 
@@ -100,15 +105,15 @@ const useValidation = (value, validations, isDirty) => {
 
                     default: return;
                 }
-                await fieldsErrorsResolver(specialField)
 
+                await fieldsErrorsResolver(specialField)
             }
         }
         if (isDirty) {
             validate()
         }
 
-    }, [value, isDirty])
+    }, [value, isDirty, validations, minLength, maxLength])
 
     return {
         isEmpty,

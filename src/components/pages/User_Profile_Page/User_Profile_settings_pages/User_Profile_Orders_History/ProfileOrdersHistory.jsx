@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { CookieManager, GET_ORDERSLIST_BY_USER } from 'src/MAIN'
 import SortSelector from 'UI/selector/Sort_selector/SortSelector'
 import OrdersHistoryItem from './Orders_history_item/OrdersHistoryItem'
@@ -32,7 +32,7 @@ const ProfileOrdersHistory = ({ user }) => {
     ]
 
 
-    const sortOrdersHistory = (sort) => {
+    const sortOrdersHistory = useCallback((sort) => {
         setSortValue(sort)
         let sortType = ''
 
@@ -52,7 +52,7 @@ const ProfileOrdersHistory = ({ user }) => {
         console.log('sorted')
 
         setSortedItems([...ordersHistoryItems].sort((a, b) => sorter(a, b)))
-    }
+    }, [ordersHistoryItems])
 
 
     useEffect(() => {
@@ -73,7 +73,7 @@ const ProfileOrdersHistory = ({ user }) => {
         if (ordersHistoryItems.length !== 0) {
             sortOrdersHistory('по дате');
         }
-    }, [ordersHistoryItems])
+    }, [ordersHistoryItems, sortOrdersHistory])
 
     
     return (

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Header from 'components/Header/Header';
-import HomePage from 'components/pages/Home_Page/HomePage';
+import Header from '@components/Header/Header';
+import HomePage from '@components/pages/Home_Page/HomePage';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import AutorisationPage from 'components/pages/Authorisation_Page/AuthorisationPage';
-import RegistrationPage from 'components/pages/Registration_Page/RegistrarionPage';
-import UserProfile from 'components/pages/User_Profile_Page/UserProfile';
-import Users from 'src/users';
-import { CookieManager } from 'src/MAIN';
-import ErrorPage from 'components/pages/Error_Page/ErrorPage';
+import AutorisationPage from '@components/pages/Authorisation_Page/AuthorisationPage';
+import RegistrationPage from '@components/pages/Registration_Page/RegistrarionPage';
+import UserProfile from '@components/pages/User_Profile_Page/UserProfile';
+import UsersContainer from '@src/components/pages/Users_Page/UsersContainer';
+import ErrorPage from '@components/pages/Error_Page/ErrorPage';
+import CookieManager from './cookie/CookieManager';
 
 function App() {
   const [isLogged, setLogged] = useState(false)
@@ -42,7 +42,7 @@ function App() {
           {!isLogged && <Route path='/auth' element={<AutorisationPage isLogged={isLogged} setLogged={setLogged} />} />}
           {!isLogged && <Route path='/reg' element={<RegistrationPage />} />}
           {isLogged && <Route path='/profile' element={<UserProfile isLogged={isLogged} setLogged={setLogged} />} />}
-          {isLogged && <Route path='/users-list' element={<Users />} />}
+          {isLogged && <Route path='/users-list' element={<UsersContainer />} />}
           <Route path="/*" element={<Navigate to="/" replace />} />
           <Route path="/error" element={<ErrorPage/>} />
         </Routes>
