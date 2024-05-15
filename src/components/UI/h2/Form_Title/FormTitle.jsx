@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './FormTitle.module.css';
 
-const FormTitle = ({ styles, arrayWord }) => {
+const FormTitle = ({ styles, word }) => {
     return (
         <h2 style={styles} className={classes.loader}>
             <div>
-                {arrayWord.map((letter, index) => (
+                {word.split('').map((letter, index) => (
                     <span key={index}>{letter}</span>
                 ))}
             </div>

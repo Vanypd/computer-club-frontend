@@ -1,0 +1,4 @@
+.tape {
+    height: 50px;
+    background-color: var(--page-theme-color);
+}

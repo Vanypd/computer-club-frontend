@@ -11,7 +11,8 @@ module.exports = {
             '@hooks': resolvePath('src/hooks'),
             '@UI': resolvePath('src/components/UI'),
             '@css': resolvePath('src/css'),
-            "@API": resolvePath('API/*'),
+            "@API": resolvePath('src/API'),
+            "@types": resolvePath('src/types'),
         }
     },
 }

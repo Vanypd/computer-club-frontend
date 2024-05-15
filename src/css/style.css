@@ -1,72 +1,22 @@
 html {
-	width: 100%;
 	overflow-x: hidden;
-	/* background-image: url('https://wallpaperaccess.com/full/4960562.jpg'); */
-	background-image: url('https://r4.wallpaperflare.com/wallpaper/288/623/752/technology-asus-rog-asus-hd-wallpaper-18566da81060cc38e0bc019ef802740a.jpg');
-	/* background-image: url('https://c4.wallpaperflare.com/wallpaper/380/523/681/design-neon-abstract-light-design-hd-wallpaper-preview.jpg'); */
+}
 
-	/* background-image: url('https://img-cdn.tinkoffjournal.ru/-/american-psycho-1234.1dai5n..gif'); */
+a {
+	text-decoration: none;
+}
+
+.App {
+	min-width: 100vw;
+	min-height: 100vh;
+
+	background-image: url("/src/img/asus-rog-wallpaper.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-img {
-	max-width: 100%;
-}
-
-body {
-	height: 100%;
-}
-
-
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-p {
-	margin: 0;
-	padding: 0;
-}
-
-h1 {
-	margin: 0;
-	padding: 0;
-}
-
-.body {
-	position: relative;
-	margin: 0;
-	padding: 0;
-	/* background-color: var(--main-color); */
-}
-
-/* .main {
-	margin-top: 100px;
-
-} */
-
-.App {
-	all: inherit;
-}
-
-#root {
-	all: inherit;
-}
 
 mark {
 	background-color: rgba(0, 0, 0, .3);
@@ -79,115 +29,6 @@ mark {
 	display: flex;
 }
 
-.form_bottom>div {
-	flex-grow: 1;
-	margin: 0 auto;
-}
-
-.form_btn {
-	position: relative;
-	margin: 0 auto;
-	display: block;
-	padding: 10px 30px;
-	font-size: 18px;
-	font-weight: 400;
-	background-color: transparent;
-	border: 2px solid var(--first-details-color);
-	border-radius: 10px;
-	color: var(--first-details-color);
-	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.form_btn:focus {
-	outline: 1px solid var(--first-details-color);
-	outline-offset: 2px;
-}
-
-.form_btn:hover {
-	background-color: var(--first-details-color);
-	color: #fff;
-	box-shadow: 0 0 5px var(--first-details-color),
-		0 0 25px var(--first-details-color),
-		0 0 50px var(--first-details-color),
-		0 0 100px var(--first-details-color);
-}
-
-.form_btn:active {
-	filter: brightness(70%);
-	transform: scale(90%);
-}
-
-/* home_page */
-
-/* .home_page_body {
-
-} */
-
-.home_page_link {
-	margin: auto;
-	padding: 10px 30px;
-	width: 500px;
-	height: 70px;
-	font-size: 18px;
-	font-weight: 400;
-	margin-bottom: 30px;
-	background-color: transparent;
-	border: 2px solid var(--first-details-color);
-	border-radius: 10px;
-	color: var(--first-details-color);
-	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.home_page_link span {
-	align-self: center;
-	margin: 0 auto;
-}
-
-.home_page_link:focus {
-	outline: 1px solid var(--first-details-color);
-	outline-offset: 2px;
-}
-
-.home_page_link:hover {
-	background-color: var(--first-details-color);
-	color: #fff;
-	box-shadow: 0 0 5px var(--first-details-color),
-		0 0 50px var(--first-details-color);
-
-}
-
-.home_page_link:active {
-	filter: brightness(70%);
-	transform: scale(90%);
-}
-
-.header_link {
-	margin: 0;
-	height: 100%;
-	width: 100px;
-	padding: 0 10px 0 10px;
-	border: none;
-	border-radius: 0;
-	font-size: 12px;
-}
-
-.header_link:first-child {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-
-}
-
-.home_page_buttons_item {
-	margin: 0 auto;
-	justify-content: center;
-}
-
-.home_page_buttons_list {
-	position: relative;
-	flex-direction: column;
-	text-align: center;
-	align-items: center;
-}
 
 /* users */
 

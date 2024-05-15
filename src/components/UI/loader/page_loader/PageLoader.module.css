@@ -1,0 +1,140 @@
+.background {
+    position: fixed;
+	top: 0;
+	left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--page-theme-color);
+    z-index: 10000;
+	opacity: 1;
+	transition: opacity 2s ease-in-out;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.background_disappears {
+	opacity: 0;
+}
+
+.top_tape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    background-image: linear-gradient(180deg,rgba(0, 0, 0, 1), 40%, rgba(0, 0, 0, 0));
+}
+
+.bottom_tape {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10vh;
+    width: 100vw;
+    background-image: linear-gradient(0deg,rgba(0, 0, 0, 1), 40%, rgba(0, 0, 0, 0));
+}
+
+.loader_item {
+    --height: 18vh;
+    --width: 18vw;
+
+    position: absolute;
+    top: calc(50% - (var(--height) / 2));
+    left: calc(50% - (var(--height) / 2));
+    width: var(--height);
+    height: var(--height);
+    background: rgba(0, 0, 0, 0.3);
+	place-items: center;
+	border-radius: 4px;
+}
+
+/**
+	loader --7
+**/
+
+.loader {
+	--color: var(--second-main-color);
+    --color2: var(--first-main-color);
+	--size-mid: 6vmin;
+	--size-dot: 1.5vmin;
+	--size-bar: 0.4vmin;
+	--size-square: 3vmin;
+	
+	display: block;
+	position: relative;
+	width: 100%;
+    height: 100%;
+	display: grid;
+	place-items: center;
+}
+
+.loader::before,
+.loader::after {
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+	box-shadow: 2px 2px 5px black;
+}
+
+.loader::before,
+.loader::after {
+	width: var(--size-square);
+	height: var(--size-square);
+	background-color: var(--color);
+}
+
+.loader::before {
+	top: calc(50% - var(--size-square));
+	left: calc(50% - var(--size-square));
+	animation: loader-6 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+.loader::after {
+	top: 50%;
+	left: 50%;
+	animation: loader-7 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+@keyframes loader-6 {
+	0%, 100% {
+		transform: none;
+        background-color: var(--color);
+	}
+	
+	25% {
+		transform: translateY(100%);
+        background-color: var(--color);
+	}
+	
+	50% {
+		transform: translateX(200%) translateY(100%);
+        background-color: var(--color2);
+	}
+	
+	75% {
+		transform: translateX(200%);
+        background-color: var(--color2);
+	}
+}
+
+@keyframes loader-7 {
+	0%, 100% {
+		transform: none;
+        background-color: var(--color);
+	}
+	
+	25% {
+		transform: translateY(-100%);
+        background-color: var(--color);
+	}
+	
+	50% {
+		transform: translateX(-200%) translateY(-100%);
+        background-color: var(--color2);
+	}
+	
+	75% {
+		transform: translateX(-200%);
+        background-color: var(--color2);
+	}
+}

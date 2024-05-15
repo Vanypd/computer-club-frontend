@@ -1,6 +1,14 @@
 {
     "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "jsx": "react",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
       "baseUrl": "./src",
+      
       "paths": {
         "@src/*": ["./*"],
         "@components/*": ["components/*"],
@@ -8,7 +16,8 @@
         "@hooks/*": ["hooks/*"],
         "@UI/*": ["components/UI/*"],
         "@css/*": ["css/*"],
-        "@API/*": ["API/*"]
+        "@API/*": ["API/*"],
+        "@types/*": ["types/*"]
       }
     }
 }

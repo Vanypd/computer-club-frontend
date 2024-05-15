@@ -3,25 +3,20 @@ import MainStyleBtn from "@UI/button/main_style_button/MainStyleBtn";
 import FormTitle from "@UI/h2/form_title/FormTitle";
 import RegInput from "@UI/input/Registration_input/RegistrationInput";
 import useInput from "@hooks/useInput";
-import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import APIService from "@src/API/APIService";
 import CookieManager from "@src/cookie/CookieManager";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import BasicPostForm from "../../UI/form/BasicPostForm/BasicPostForm";
 import classes from './AuthorisationPage.module.css';
 
-const AutorisationPage = ({ setLogged }) => {
+const AuthorisationPage = ({ setLogged }) => {
 
     const navigate = useNavigate()
     const [formErrorMsg, setFormErrorMsg] = useState('')
 
     const email = useInput('', { isEmpty: true, minLength: 6, maxLength: 128 })
     const password = useInput('', { isEmpty: true, minLength: 8, maxLength: 36 })
-
-    const registration = useRef(null)
-
-    const activeFormChecker = async () => {
-        registration.current.classList.add(classes.form_active);
-    };
 
     const authorisation = async (e) => {
         e.preventDefault()
@@ -40,13 +35,13 @@ const AutorisationPage = ({ setLogged }) => {
             if (responseMessage === 'wrong login or password') {
                 setFormErrorMsg('Неверный e-mail или пароль')
                 return;
-            } 
-            
+            }
+
             if (data.status === 500) {
                 setFormErrorMsg('Что-то пошло не так STATUS:500')
                 console.log(data)
             }
-            
+
             CookieManager.logIn(data.token, data.userId)
             setLogged(true)
             navigate('/')
@@ -58,13 +53,12 @@ const AutorisationPage = ({ setLogged }) => {
 
 
     return (
-        <main className="main">
+        <main>
             <BackButton />
-            <div className="conteiner">
-                <form method="post" className={[classes.form].join(' ')} ref={registration} onLoad={activeFormChecker()} noValidate>
-                    <FormTitle styles={{ marginBottom: '80px' }} arrayWord={['А', 'в', 'т', 'о', 'р', 'и', 'з', 'а', 'ц', 'и', 'я']} />
-                    <input type="text" name="id" hidden />
+            <div className={classes.container}>
 
+                <BasicPostForm>
+                    <FormTitle styles={{ marginBottom: '80px' }} word={'Авторизация'} />
                     <RegInput value={email.value} onBlur={e => email.onBlur(e)} onChange={e => email.onChange(e)} errorMsg={email.errorMessage} type='text' name='email' label='Электронная почта' />
                     <RegInput value={password.value} onBlur={e => password.onBlur(e)} onChange={e => password.onChange(e)} errorMsg={password.errorMessage} type='password' name='password' label='Пароль' />
 
@@ -77,10 +71,10 @@ const AutorisationPage = ({ setLogged }) => {
                             <span className={classes.response_error_messege}>{formErrorMsg}</span>
                         </div>
                     </div>
-                </form>
+                </BasicPostForm>
             </div >
         </main >
     )
 }
 
-export default AutorisationPage;
+export default AuthorisationPage;

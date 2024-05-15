@@ -31,7 +31,7 @@ const Header = ({ isLogged }) => {
                         <div className="authentication flex">
                             <MainStyleBtn
                                 onClick={toUserProfilePage}
-                                styles={{ height: '100%', padding: '0 10px', minWidth: '100px', border: 'none', borderRadius: '0', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px' }}>
+                                styles={{ height: '100%', padding: '0 10px', minWidth: '100px', border: 'none', borderRadius: '0' }}>
                                 Личный кабинет
                             </MainStyleBtn>
                         </div>
@@ -40,7 +40,7 @@ const Header = ({ isLogged }) => {
                         <div className="authentication flex">
                             <MainStyleBtn
                                 onClick={toAuthorisationPage}
-                                styles={{ height: '100%', padding: '0 10px', minWidth: '100px', border: 'none', borderRadius: '0', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px' }}>
+                                styles={{ height: '100%', padding: '0 10px', minWidth: '100px', border: 'none', borderRadius: '0' }}>
                                 Вход
                             </MainStyleBtn>
                             <MainStyleBtn

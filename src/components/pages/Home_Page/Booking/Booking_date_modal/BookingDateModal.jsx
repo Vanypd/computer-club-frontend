@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import classes from './BookingDateModal.module.css';
 import APIService from "@src/API/APIService";
 
-const BookingDateModal = ({ selectedRoom, setSelectedRoom, selectedCell, setSelectedCell, selectedDate, setSelectedDate, dateChosen: isDateChosen, setDateChosen, scrollPos }) => {
+const BookingDateModal = ({ selectedRoom, setSelectedRoom, selectedCell, setSelectedCell, selectedDate, setSelectedDate, isDateChosen, setDateChosen, scrollPos }) => {
 
     const [dayList, setDayList] = useState([])
     const bookingDateRef = useRef(null);
@@ -38,7 +38,7 @@ const BookingDateModal = ({ selectedRoom, setSelectedRoom, selectedCell, setSele
                 })
                 .catch((error) => {
                     console.log(error)
-                    setBookingMessage(error)
+                    setBookingMessage(error.message)
                 })
         }
 
@@ -61,11 +61,11 @@ const BookingDateModal = ({ selectedRoom, setSelectedRoom, selectedCell, setSele
     useEffect(() => {
 
         if (isDateChosen) {
-            bookingDateRef.classList.remove(classes.container_active)
+            bookingDateRef.current.classList.remove(classes.container_active)
         }
 
         if (isDateModalActive && !isDateChosen) {
-            bookingDateRef.classList.add(classes.container_active)
+            bookingDateRef.current.classList.add(classes.container_active)
         }
 
     }, [isDateChosen, isDateModalActive])
@@ -82,11 +82,11 @@ const BookingDateModal = ({ selectedRoom, setSelectedRoom, selectedCell, setSele
             return;
         }
 
-        if (bookingDateRef.classList.contains(classes.container_active)) {
+        if (bookingDateRef.current.classList.contains(classes.container_active)) {
             return;
         }
 
-        bookingDateRef.classList.add(classes.container_active)
+        bookingDateRef.current.classList.add(classes.container_active)
         setDateModalActive(true)
     }
 

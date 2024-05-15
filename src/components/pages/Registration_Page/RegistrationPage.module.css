@@ -1,8 +1,11 @@
+.container {
+	padding-top: 10vh;
+}
+
 .form {
 	display: flex;
 	position: relative;
-	margin: auto;
-	margin-top: 10vh;
+	margin: 0 auto;
 	flex-direction: column;
 	flex-shrink: 0;
 	flex-grow: 1;

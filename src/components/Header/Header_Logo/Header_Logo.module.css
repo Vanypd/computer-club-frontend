@@ -36,25 +36,3 @@
 		fill: var(--first-details-color);
 	}
 }
-
-@keyframes xoxlo {
-	0% {
-		fill: #006eff;
-	}
-
-	33% {
-		fill: #fbff00;
-	}
-
-	66% {
-		fill: #fbff00;
-	}
-
-	100% {
-		fill: #006eff;
-	}
-}
-
-.logo:hover {
-	animation: xoxlo 0.5s infinite ease-in-out;
-}

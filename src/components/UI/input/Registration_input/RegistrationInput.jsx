@@ -11,9 +11,9 @@ const RegInput = ({ value, onBlur, onChange, handler, errorMsg, state, setState,
         if (errorMsg !== '') {
             return ([classes.form_place, classes.form_place_invalid].join(' '))
 
-        } else {
-            return ([classes.form_place, classes.form_place_valid].join(' '))
         }
+
+        return ([classes.form_place, classes.form_place_valid].join(' '))
     }
 
 
