@@ -1,6 +1,6 @@
 import BackButton from "@UI/button/back_button/BackButton";
 import MainStyleBtn from "@UI/button/main_style_button/MainStyleBtn";
-import FormTitle from "@UI/h2/form_title/FormTitle";
+import FormTitle from '@UI/h2/FormTitle/FormTitle';
 import RegInput from "@UI/input/Registration_input/RegistrationInput";
 import useInput from "@hooks/useInput";
 import APIService from "@src/API/APIService";

@@ -1,7 +1,6 @@
 import BackButton from '@UI/button/back_button/BackButton';
 import MainStyleBtn from '@UI/button/main_style_button/MainStyleBtn';
 import SubmitCheckbox from '@UI/checkbox/Submit_checkbox/SubmitCheckbox';
-import FormTitle from '@UI/h2/form_title/FormTitle';
 import RegInput from '@UI/input/Registration_input/RegistrationInput';
 import APIService from '@src/API/APIService';
 import { FieldType } from '@src/types/enums/enum';
@@ -10,6 +9,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BasicPostForm from '../../UI/form/BasicPostForm/BasicPostForm';
 import classes from './RegistrationPage.module.css';
+import FormTitle from '@UI/h2/FormTitle/FormTitle';
 
 const RegistrationPage = () => {
 
